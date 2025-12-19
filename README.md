@@ -7,6 +7,6 @@ This repository **collects Bruce firmware scripts** for the community, shared by
 
 ## Features
 - Collection of Bruce firmware scripts  
-- Device support: RFID, NFC, IR, Sub‑GHz  
+- Scripts support: RFID, NFC, IR, Sub‑GHz  
 - Easy to use  
 
