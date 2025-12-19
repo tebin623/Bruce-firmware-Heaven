@@ -1,6 +1,6 @@
-# Bruce Firmware Heaven
+# Bruce Scripts Heaven
 
-All-in-one Bruce device firmware scripts: RFID, NFC, IR, Sub-GHz & more.
+All-in-one Bruce firmware scripts: RFID, NFC, IR, Sub-GHz & more.
 
 ## Features
 - RFID, NFC, IR, Sub-GHz support
