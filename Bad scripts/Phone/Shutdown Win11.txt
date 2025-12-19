@@ -1,0 +1,31 @@
+REM Script by Lone.
+
+REM Windows 11.
+
+REM Shutdown Script.
+
+GUI
+
+DELAY 100
+
+UP
+
+DELAY 100
+
+RIGHT
+
+DELAY 100
+
+ENTER
+
+DELAY 100
+
+DOWN
+
+DELAY 100
+
+DOWN
+
+DELAY 100
+
+ENTER

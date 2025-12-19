@@ -1,0 +1,3 @@
+REM Ebashit vse i vsya na linux i na windows
+GUI l
+REPEAT 99999999

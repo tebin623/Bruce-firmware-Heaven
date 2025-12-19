@@ -1,0 +1,19 @@
+REM Author: Tebin-32
+REM Description: Activate Windows permanently with MAS
+REM Version: 1.0
+REM Category: GoodUSB
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell
+DELAY 500
+ENTER
+DELAY 1500
+STRING irm https://get.activated.win | iex
+ENTER
+DELAY 4000
+STRING 1
+DELAY 500
+STRING 1
+DELAY 500
+STRING 1

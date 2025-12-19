@@ -1,0 +1,978 @@
+# 
+name: Play_pause
+type: parsed
+protocol: NECext
+address: 02 7D 00 00
+command: 5B A4 00 00
+#
+name: Play_pause
+type: parsed
+protocol: NEC
+address: 01 00 00 00
+command: 5A 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: NECext
+address: 00 DF 00 00
+command: 52 AD 00 00
+# 
+name: Play
+type: parsed
+protocol: NECext
+address: 00 DF 00 00
+command: 5A A5 00 00
+# 
+name: Display
+type: parsed
+protocol: NECext
+address: 00 DF 00 00
+command: 19 E6 00 00
+# 
+name: Play_pause
+type: parsed
+protocol: NEC
+address: 01 00 00 00
+command: 58 00 00 00
+# 
+name: Display
+type: parsed
+protocol: NECext
+address: 01 72 00 00
+command: 0C F3 00 00
+# 
+name: Play/pause
+type: parsed
+protocol: NECext
+address: 01 72 00 00
+command: 4E B1 00 00
+#
+name: Display
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 46 B9 00 00
+# 
+name: Play/pause
+type: parsed
+protocol: NEC
+address: 08 00 00 00
+command: C8 00 00 00
+#
+name: Play_pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 415 4426 210
+# 
+name: Play
+type: parsed
+protocol: RC5
+address: 01 00 00 00
+command: 19 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: RC5
+address: 01 00 00 00
+command: 31 00 00 00
+# 
+name: Display
+type: parsed
+protocol: NECext
+address: 00 7F 00 00
+command: 10 EF 00 00
+# 
+name: Play_pause
+type: parsed
+protocol: NECext
+address: 00 7F 00 00
+command: 4C B3 00 00
+# 
+name: Play_pause
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 89 76 00 00
+# 
+name: Pause_play
+type: parsed
+protocol: NECext
+address: 02 7D 00 00
+command: 5B A4 00 00
+# 
+name: Playpause
+type: parsed
+protocol: NECext
+address: 00 7F 00 00
+command: 4A B5 00 00
+# 
+name: Play Pause
+type: parsed
+protocol: NEC
+address: 6E 00 00 00
+command: 23 00 00 00
+# 
+name: Display
+type: parsed
+protocol: NEC
+address: 20 00 00 00
+command: 42 00 00 00
+#
+name: Play
+type: parsed
+protocol: NECext
+address: 64 46 00 00
+command: DA 25 00 00
+#
+name: Play
+type: parsed
+protocol: RCA
+address: 0F 00 00 00
+command: A8 00 00 00
+#
+name: Pause
+type: parsed
+protocol: RCA
+address: 0F 00 00 00
+command: 98 00 00 00
+#
+name: Play_pause
+type: parsed
+protocol: NECext
+address: 84 E0 00 00
+command: EE 11 00 00
+#
+name: Display
+type: parsed
+protocol: NECext
+address: 84 E0 00 00
+command: 9B 64 00 00
+# 
+name: Display
+type: parsed
+protocol: NEC
+address: 20 00 00 00
+command: 07 00 00 00
+#
+name: Play&Pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 843 828 1776 755 844 829 844 828 846 828 848 827 844 1641 1692 838 845 828 845 1643 845 828 845
+#
+name: GooglePlay
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 873 797 875 798 1723 806 906 766 934 739 906 767 906 1584 1748 1624 875 797 1719 1629 870
+# 
+name: Play
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: B0 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: BA 00 00 00
+#
+name: Play
+type: parsed
+protocol: NECext
+address: 00 7F 00 00
+command: 53 AC 00 00
+#
+name: Pause
+type: parsed
+protocol: NECext
+address: 00 7F 00 00
+command: 53 AC 00 00
+#
+name: Play_pause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: B0 00 00 00
+#
+name: Display
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: AA 00 00 00
+# 
+name: Pause/play
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: CA 35 00 00
+#
+name: Pause
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: A9 56 00 00
+#
+name: Play
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: A8 57 00 00
+# 
+name: Play
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 42 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 41 00 00 00
+# 
+name: Play_pa
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 6B 00 00 00
+# 
+name: Display_info
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 0C F3 00 00
+# 
+name: Play
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 1E E1 00 00
+# 
+name: Pause
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 4E B1 00 00
+# 
+name: Add_play
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: A8 57 00 00
+# 
+name: Add_pause
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: A9 56 00 00
+#
+name: Play_pa
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: A8 57 00 00
+# 
+name: Play_pa
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 42 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: RC5
+address: 03 00 00 00
+command: 31 00 00 00
+# 
+name: Play
+type: parsed
+protocol: RC5
+address: 03 00 00 00
+command: 19 00 00 00
+# 
+name: Play
+type: parsed
+protocol: NEC
+address: 50 00 00 00
+command: 46 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: NEC
+address: 50 00 00 00
+command: 61 00 00 00
+# 
+name: Playpause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: B0 00 00 00
+# 
+name: Play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 8506 4235 553 1568 551 1568 552 1567 553 1569 550 504 550 506 523 529 526 531 524 530 525 530 525 1594 526 1596 524 529 526 530 525 530 525 1594 525 21470 551 1567 552 1568 552 1568 551 1568 552 503 552 503 552 503 552 503 552 503 552 504 551 1568 552 1567 553 501 554 503 552 502 553 1566 552
+# 
+name: Pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 8481 4259 500 1618 501 1617 502 1618 501 1618 501 552 502 553 501 552 502 554 500 1617 502 553 501 1617 502 1618 501 553 501 553 501 552 502 1616 501 20423 501 1618 526 1595 524 1592 526 1593 527 527 527 529 526 528 526 527 528 1593 526 527 527 1592 527 1593 526 527 527 528 527 527 528 1592 525
+#
+name: Pause
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 48 00 00 00
+#
+name: Play
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 57 00 00 00
+# 
+name: Yell_play
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 63 00 00 00
+# 
+name: Blue_pause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 61 00 00 00
+# 
+name: PLAY
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: B0 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: B0 00 00 00
+#
+name: Display
+type: parsed
+protocol: NECext
+address: 83 7A 00 00
+command: 07 00 00 00
+#
+name: Pause_Play
+type: parsed
+protocol: RC5
+address: 01 00 00 00
+command: 23 00 00 00
+#
+name: Google_Play
+type: parsed
+protocol: RC5
+address: 01 00 00 00
+command: 2C 00 00 00
+#
+name: Play/pause
+type: parsed
+protocol: NEC
+address: 19 00 00 00
+command: 46 00 00 00
+#
+name: Display
+type: parsed
+protocol: NEC
+address: 38 00 00 00
+command: 02 00 00 00
+#
+name: Play/pause
+type: parsed
+protocol: NEC
+address: 38 00 00 00
+command: 4E 00 00 00
+# 
+name: Play_pause
+type: parsed
+protocol: NEC
+address: 01 00 00 00
+command: 57 00 00 00
+# 
+name: Play_pa
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 4C B3 00 00
+#
+name: Play
+type: parsed
+protocol: Kaseikyo
+address: 89 02 20 03
+command: 00 00 00 00
+#
+name: Pause
+type: parsed
+protocol: Kaseikyo
+address: 89 02 20 03
+command: 10 00 00 00
+#
+name: Freeviewplay
+type: parsed
+protocol: Kaseikyo
+address: 89 02 20 03
+command: 60 03 00 00
+#
+name: Play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3576 1655 468 405 466 1276 467 406 466 405 466 405 466 405 466 404 467 404 467 404 467 404 493 380 491 406 464 407 463 1281 462 410 461 410 461 411 460 411 461 410 461 411 461 410 461 411 460 411 461 1283 461 1283 460 411 460 411 460 1283 461 411 461 411 460 411 460 411 461 411 460 411 461 411 460 411 461 411 460 411 460 1283 461 1283 460 1283 460 411 460 411 461 1283 461 411 461 411 460 1283 460 411 461
+#
+name: Pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3581 1651 523 375 497 1219 525 374 497 374 497 374 497 374 497 374 497 374 497 374 496 375 495 377 493 378 492 380 490 1255 488 383 488 383 488 383 488 383 489 383 488 383 489 383 488 383 488 383 488 1255 488 1255 489 383 488 383 488 1255 488 383 488 383 488 383 489 383 488 1256 487 384 487 384 488 383 488 384 488 383 488 1256 487 1256 487 384 488 384 487 384 487 1256 487 384 487 384 488 1256 487 384 488
+#
+name: Play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3513 1776 425 450 419 1334 426 448 422 458 422 452 417 456 424 450 419 460 420 454 426 448 421 453 427 452 417 456 424 1330 420 454 426 447 423 452 428 452 417 456 424 449 420 454 426 454 426 447 423 1332 418 1341 419 461 419 454 426 1328 422 451 418 455 425 449 420 459 421 453 427 446 424 451 418 461 419 454 426 448 421 1332 418 1336 424 1336 425 455 425 448 422 1333 417 456 424 450 419 1334 426 448 422
+#
+name: Pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3511 1779 422 457 423 1336 424 455 425 448 422 452 417 457 423 456 424 449 420 453 427 447 422 457 423 450 419 454 426 1328 422 451 418 456 424 456 424 449 420 453 427 447 423 457 423 450 419 455 425 1328 422 1332 418 456 424 449 420 1333 427 447 423 452 417 462 418 456 424 1329 421 453 427 447 423 452 417 462 418 456 424 1329 421 1339 421 458 422 452 417 456 424 1329 421 452 417 456 424 1330 420 454 426
+#
+name: Play
+type: parsed
+protocol: Kaseikyo
+address: B0 02 20 00
+command: A0 00 00 00
+#
+name: Play_pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3474 1738 450 422 453 1293 447 426 449 424 451 422 453 419 446 428 447 425 450 423 452 421 444 429 446 427 448 424 451 1296 444 428 447 426 449 424 451 422 453 419 445 428 447 1299 451 1294 446 427 448 1298 452 420 444 429 446 426 449 424 451 422 453 420 445 428 447 426 449 424 451 1295 445 1301 449 423 452 421 444 429 446 427 448 425 450 422 453 1293 447 1299 451 421 454 1292 448 1298 452 421 444 1302 448
+#
+name: Play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3480 1716 482 417 429 1284 457 441 429 442 429 442 428 442 428 442 428 442 428 442 453 417 453 416 454 417 452 418 451 1289 451 422 447 423 447 424 446 423 447 423 447 448 422 448 422 448 422 448 422 1319 422 1319 422 448 422 448 422 1319 422 448 423 448 422 448 422 448 422 448 423 448 422 448 422 448 422 448 422 448 422 1319 422 1319 422 1319 422 448 422 448 422 1320 421 448 422 448 422 1319 422 448 422
+#
+name: Pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3508 1690 512 387 483 1229 512 387 483 387 483 387 483 387 428 442 428 442 454 416 454 416 454 416 454 417 452 418 451 1289 451 421 449 422 448 423 447 423 448 423 447 423 447 423 447 423 448 423 447 1294 447 1294 447 423 447 423 447 1295 446 423 447 423 447 424 446 424 446 1296 445 424 447 448 422 448 422 425 446 448 422 1319 422 1319 422 448 422 448 422 448 423 1319 422 449 421 448 423 1319 422 448 422
+#
+name: Player
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3505 1691 483 416 454 1259 482 416 454 416 454 416 428 442 428 442 453 417 454 416 454 416 454 417 453 418 451 419 450 1290 450 422 448 423 447 423 448 423 447 424 447 423 447 424 446 423 448 423 447 1295 446 1295 447 424 446 424 447 1295 446 424 447 424 446 424 446 448 422 1320 421 1320 421 448 422 1320 421 449 422 1320 421 449 421 1320 421 449 421 1320 421 449 421 449 421 449 421 1320 421 449 421 449 421
+#
+name: Play
+type: parsed
+protocol: Samsung32
+address: 3E 00 00 00
+command: 61 00 00 00
+#
+name: Pause
+type: parsed
+protocol: Samsung32
+address: 3E 00 00 00
+command: 63 00 00 00
+# 
+name: Play
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 2C 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 30 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 2C 00 00 00
+# 
+name: Play
+type: parsed
+protocol: RC5
+address: 05 00 00 00
+command: 35 00 00 00
+#
+name: Play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 2711 837 482 843 476 406 480 403 1473 1255 477 406 480 403 473 410 476 407 479 403 473 410 476 407 479 403 473 410 889 879 894 433 474 852 478 405 481 83754 2710 837 482 843 476 407 479 404 1472 1256 476 407 479 404 482 400 476 408 478 404 482 401 475 408 478 405 481 401 888 881 892 435 482 843 476 407 479
+# 
+name: Display
+type: parsed
+protocol: NECext
+address: 00 7F 00 00
+command: 14 EB 00 00
+# 
+name: Play
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 4C B3 00 00
+#
+name: Display
+type: parsed
+protocol: RCA
+address: 0F 00 00 00
+command: 3C 00 00 00
+# 
+name: Play
+type: parsed
+protocol: NECext
+address: 86 05 00 00
+command: 70 8F 00 00
+# 
+name: Pause
+type: parsed
+protocol: NECext
+address: 86 05 00 00
+command: 81 7E 00 00
+#
+name: Google Play
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 54 AB 00 00
+# 
+name: Play_pa
+type: parsed
+protocol: NEC
+address: A0 00 00 00
+command: 4D 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: NEC
+address: A0 00 00 00
+command: 4D 00 00 00
+# 
+name: Play
+type: parsed
+protocol: NEC
+address: A0 00 00 00
+command: 4D 00 00 00
+#
+name: Replay
+type: parsed
+protocol: NECext
+address: EA C2 00 00
+command: 78 87 00 00
+#
+name: Play/pause
+type: parsed
+protocol: NECext
+address: EA C2 00 00
+command: 4C B3 00 00
+# 
+name: Play
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 47 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 4A 00 00 00
+# 
+name: MagicInfo Player I
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 30 00 00 00
+# 
+name: Play/Pause
+type: parsed
+protocol: Samsung32
+address: 05 00 00 00
+command: 19 00 00 00
+# 
+name: Media Player
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 8C 00 00 00
+#
+name: Play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 4648 4361 687 1552 686 1552 686 1553 685 435 631 488 631 488 631 487 632 487 632 1607 631 1606 632 1606 632 488 631 489 630 513 632 487 632 487 631 1607 630 1608 629 1609 628 491 628 491 628 492 627 1611 627 492 627 492 627 492 627 492 627 1611 627 1611 627 1611 627 492 627 1611 627
+#
+name: Play_pause
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: B9 00 00 00
+# 
+name: Play/Pause
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: B9 00 00 00
+#
+name: Play
+type: parsed
+protocol: SIRC20
+address: 5A 0E 00 00
+command: 1A 00 00 00
+#
+name: Pause
+type: parsed
+protocol: SIRC20
+address: 5A 0E 00 00
+command: 1A 00 00 00
+# 
+name: Play_pause
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 47 00 00 00
+# 
+name: Display
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 1F 00 00 00
+# 
+name: Play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1195 1215 434 589 434 890 434 2389 434 588 435 1488 436 2388 436 2689 434 888 436 1188 435 889 434 1789 435 86616 372 881 375 329 375 604 375
+# 
+name: Play_pause
+type: parsed
+protocol: SIRC20
+address: 5A 0E 00 00
+command: 1A 00 00 00
+#
+name: Play/pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1225 1186 435 588 437 887 441 2382 432 591 434 1490 435 2389 436 2688 440 883 435 1189 432 891 437 1786 432 86616 302 954 301 402 309 671 301
+# 
+name: Pause
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 4a 00 00 00
+# 
+name: Play/pause
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: b9 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: B9 00 00 00
+# 
+name: Text_pause_play
+type: parsed
+protocol: NEC
+address: 20 00 00 00
+command: 45 00 00 00
+# 
+name: Play_pause
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 4C B3 00 00
+#
+name: Display
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 9039 4407 631 490 631 1607 661 462 660 462 684 437 659 463 658 464 657 469 657 1583 656 490 630 1610 628 1612 627 1613 626 1614 625 1615 625 502 624 1615 625 1615 625 1614 625 1615 625 497 625 496 625 1615 625 503 624 497 625 497 625 497 625 496 625 1615 624 1615 625 496 625 1614 625 41038 9036 2174 626
+#
+name: Pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 9038 4407 631 489 632 1607 632 490 660 461 685 436 660 462 659 463 658 469 657 1582 657 468 652 1609 629 1611 627 1613 625 1614 625 1614 625 502 624 1614 625 1614 625 1615 624 496 625 1615 624 496 625 497 624 503 624 497 624 497 625 496 625 1615 624 496 625 1615 624 1614 625 1614 624 41061 9035 2174 625 95989 9063 2174 626
+#
+name: Play
+type: parsed
+protocol: NECext
+address: 02 7D 00 00
+command: 56 A9 00 00
+#
+name: Display
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 264 1848 264 792 264 792 264 792 264 792 264 1848 264 1848 264 792 264 1848 264 1848 264 792 264 792 264 792 264 1848 264 792 264 43560 264 1848 264 792 264 792 264 792 264 792 264 792 264 792 264 1848 264 792 264 792 264 1848 264 1848 264 1848 264 792 264 1848 264 43560
+#
+name: Pvr_play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3388 1649 443 397 441 1238 441 398 440 1238 441 399 440 1239 439 399 441 1239 439 376 464 1238 440 399 440 1238 441 1239 439 378 463 1238 440 400 440 1238 441 1239 440 1238 440 1239 440 399 441 398 440 376 464 1238 442 398 440 1239 440 399 440 376 464 1238 440 377 463 399 440 399 441 1238 441 399 440 399 440 399 441 399 439 399 441 399 441 399 441 1237 441 1238 441 399 440 1239 439 1239 440 376 464 398 440 375 465
+#
+name: Play
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 285 1814 309 739 309 739 309 739 308 1791 309 738 310 1791 286 762 309 738 309 738 287 763 307 1791 287 1813 287 1814 286 760 309 45388 310 1789 311 737 311 736 311 735 313 1789 311 1788 312 736 311 1788 312 1789 311 1787 313 1788 312 735 312 736 312 735 313 1785 312 43281 309 1790 310 737 311 738 310 737 311 1791 309 738 310 1789 311 738 309 737 311 737 311 738 310 1790 310 1789 311 1790 310 735 310 45390 311 1789 311 736 312 736 312 738 310 1789 311 1788 312 737 311 1788 312 1789 311 1788 312 1787 313 734 313 735 313 737 311 1785 312
+#
+name: Pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 357 1743 357 692 356 692 356 692 356 1743 357 1743 357 692 355 1744 356 1743 357 690 357 691 357 1742 358 1743 356 1745 355 690 354 43239 261 1838 261 785 263 786 262 785 263 1838 262 787 261 1838 262 786 262 786 262 1837 263 1838 262 785 263 785 263 785 263 1836 262 45436 261 1839 261 786 262 787 261 786 262 1838 262 1839 261 786 262 1838 262 1838 262 785 263 786 262 1839 261 1839 261 1838 262 784 261 43340 262 1841 260 786 262 786 262 786 262 1839 261 785 263 1839 261 786 286 762 261 1840 285 1814 287 762 286 762 286 761 288 1811 286
+# 
+name: Play_pause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 42 00 00 00
+#
+name: Play
+type: parsed
+protocol: NECext
+address: 72 DD 00 00
+command: 00 FF 00 00
+#
+name: Pause
+type: parsed
+protocol: NECext
+address: 72 DD 00 00
+command: 57 A8 00 00
+#
+name: Play_pa
+type: parsed
+protocol: NECext
+address: 72 DD 00 00
+command: 00 FF 00 00
+# 
+name: Play
+type: parsed
+protocol: SIRC15
+address: 97 00 00 00
+command: 1A 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: SIRC15
+address: 97 00 00 00
+command: 19 00 00 00
+# 
+name: Google_play
+type: parsed
+protocol: SIRC15
+address: C4 00 00 00
+command: 46 00 00 00
+# 
+name: Play
+type: parsed
+protocol: SIRC
+address: 11 00 00 00
+command: 32 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: SIRC
+address: 11 00 00 00
+command: 39 00 00 00
+# 
+name: Display
+type: parsed
+protocol: SIRC
+address: 01 00 00 00
+command: 3A 00 00 00
+# 
+name: Play_pa
+type: parsed
+protocol: SIRC15
+address: 97 00 00 00
+command: 1A 00 00 00
+# 
+name: Google_Play
+type: parsed
+protocol: SIRC15
+address: C4 00 00 00
+command: 46 00 00 00
+# 
+name: Replay
+type: parsed
+protocol: SIRC15
+address: 97 00 00 00
+command: 79 00 00 00
+#
+name: Play/pause
+type: parsed
+protocol: NEC
+address: A0 00 00 00
+command: 09 00 00 00
+#
+name: Google_Play
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 82 00 00 00
+#
+name: Display
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3488 3488 872 2616 872 872 872 872 872 2616 872 872 872 2616 872 2616 872 2616 872 2616 872 2616 872 872 872 872 872 872 872 2616 872 2616 872 872 872 2616 872 872 872 872 872 872 872 872 872 872 872 2616 872 2616 872 34008
+# 
+name: Play_pa
+type: parsed
+protocol: RCA
+address: 0F 00 00 00
+command: A8 00 00 00
+# 
+name: Instant_replay
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 78 87 00 00
+# 
+name: Play/pause
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 4C B3 00 00
+# 
+name: Play_Pause
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 4C B3 00 00
+# 
+name: Replay
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 78 87 00 00
+#
+name: Play_pause
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 336 625 290 286 640 292 311 590 315 289 647 587 640 590 315 288 638 294 309 587 640 292 311 584 331
+# 
+name: Play_|_index
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 67 00 00 00
+# 
+name: Pause_|_zoom
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 6A 00 00 00
+# 
+name: Google_play
+type: parsed
+protocol: RC5
+address: 01 00 00 00
+command: 2C 00 00 00
+# 
+name: Play
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 30 00 00 00
+# 
+name: Display
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 1C 00 00 00
+# 
+name: Play_mode
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 1D 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: NEC
+address: 44 00 00 00
+command: 10 00 00 00
+# 
+name: Play
+type: parsed
+protocol: NEC
+address: 44 00 00 00
+command: 15 00 00 00
+# 
+name: DISPLAY
+type: parsed
+protocol: RC5
+address: 00 00 00 00
+command: 12 00 00 00
+# 
+name: Play
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 68 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 68 00 00 00
+# 
+name: Pause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 37 00 00 00
+# 
+name: Play
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 33 00 00 00
+# 
+name: Play_pause
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 37 00 00 00
+#
+name: Xumo Play
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 6F 00 00 00
+# 
+name: Display
+type: parsed
+protocol: NEC
+address: 01 00 00 00
+command: 13 00 00 00

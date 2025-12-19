@@ -1,0 +1,40 @@
+Filetype: IR signals file
+Version: 1
+#
+# Panasonic NV-FJ606 VCR
+#
+name: POWER
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: D0 03 00 00
+#
+name: VOL+
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3539 1703 463 407 492 1243 493 376 491 377 463 405 463 405 488 380 489 380 487 382 485 409 458 410 457 412 455 414 455 1281 456 412 456 413 456 412 456 413 455 413 456 413 455 413 455 412 456 413 455 1281 456 413 455 412 456 413 456 412 456 412 457 412 456 413 455 413 456 412 456 413 455 413 455 412 456 413 456 1281 456 412 456 413 455 412 456 412 456 413 455 413 455 413 455 1281 456 412 456 1281 456
+#
+name: VOL-
+type: parsed
+protocol: Kaseikyo
+address: 80 02 20 00
+command: 10 02 00 00
+#
+name: NEXT
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 01
+command: A0 00 00 00
+#
+name: PREVIOUS
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 01
+command: 90 00 00 00
+#
+name: PLAY/PAUSE
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 60 00 00 00

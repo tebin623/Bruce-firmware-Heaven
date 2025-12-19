@@ -1,0 +1,59 @@
+Filetype: IR signals file
+Version: 1
+#
+# SORAN COMPUTER INSTITUTE 
+#
+name: lab 8/6 power
+type: parsed
+protocol: NEC
+address: 32 00 00 00
+command: 81 00 00 00
+# 
+name: lab 8/6 restart
+type: parsed
+protocol: NEC
+address: 32 00 00 00
+command: C4 00 00 00
+# 
+name: lab 1 power
+type: parsed
+protocol: SIRC15
+address: 54 00 00 00
+command: 15 00 00 00
+# 
+name: lab 1 input
+type: parsed
+protocol: SIRC15
+address: 54 00 00 00
+command: 57 00 00 00
+# 
+name: lab 1 reset
+type: parsed
+protocol: SIRC15
+address: 54 00 00 00
+command: 7B 00 00 00
+# 
+name: lab 1 +Brightness
+type: parsed
+protocol: SIRC15
+address: 54 00 00 00
+command: 1E 00 00 00
+# 
+name: lab 1 -Brightness
+type: parsed
+protocol: SIRC15
+address: 54 00 00 00
+command: 1F 00 00 00
+# 
+name: lab 1 +Contrast
+type: parsed
+protocol: SIRC15
+address: 54 00 00 00
+command: 18 00 00 00
+# 
+name: lab 1 -Contrast
+type: parsed
+protocol: SIRC15
+address: 54 00 00 00
+command: 19 00 00 00
+# 

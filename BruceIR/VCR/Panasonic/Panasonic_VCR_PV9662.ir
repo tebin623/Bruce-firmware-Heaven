@@ -1,0 +1,208 @@
+Filetype: IR signals file
+Version: 1
+#
+# Panasonic PV-9662 VCR
+#
+name: POWER
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: D0 03 00 00
+#
+name: Eject
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 10 00 00 00
+#
+name: Play
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: A0 00 00 00
+#
+name: Stop
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3512 1689 444 422 448 1286 454 413 446 421 449 418 452 415 444 422 448 419 451 416 454 413 446 421 449 418 452 415 444 1289 451 416 454 413 446 420 450 417 453 414 445 421 449 1285 444 423 447 420 450 1283 447 421 449 418 452 415 444 422 448 419 451 416 454 413 446 421 449 418 452 415 444 422 448 419 451 416 454 413 446 420 450 417 453 414 445 422 448 418 452 415 444 1290 450 416 454 413 446 1287 453
+#
+name: Rewind
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 20 00 00 00
+#
+name: FF
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 30 00 00 00
+#
+name: Pause
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 60 00 00 00
+#
+name: Slow
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: F0 00 00 00
+#
+name: Zero_CA_Skip
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 03
+command: 50 03 00 00
+#
+name: Record
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 80 00 00 00
+#
+name: Action
+type: parsed
+protocol: Kaseikyo
+address: 91 02 20 01
+command: 60 01 00 00
+#
+name: Prog
+type: parsed
+protocol: Kaseikyo
+address: 91 02 20 00
+command: 10 00 00 00
+#
+name: Display
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 90 03 00 00
+#
+name: Tape
+type: parsed
+protocol: Kaseikyo
+address: 95 02 20 00
+command: B0 02 00 00
+#
+name: Counter_Reset
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 01
+command: 40 01 00 00
+#
+name: Speed
+type: parsed
+protocol: Kaseikyo
+address: 91 02 20 00
+command: A0 00 00 00
+#
+name: SAP_HiFi
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 03
+command: 60 02 00 00
+#
+name: Index
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 01
+command: 00 00 00 00
+#
+name: Input
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 03
+command: 00 00 00 00
+#
+name: VCR_TV
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 60 03 00 00
+#
+name: Add_DLT
+type: parsed
+protocol: Kaseikyo
+address: 91 02 20 00
+command: 10 03 00 00
+#
+name: ChUp
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 40 03 00 00
+#
+name: ChDown
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 50 03 00 00
+#
+name: 1
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 00 01 00 00
+#
+name: 2
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 10 01 00 00
+#
+name: 3
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 20 01 00 00
+#
+name: 4
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 30 01 00 00
+#
+name: 5
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 40 01 00 00
+#
+name: 6
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3518 1686 447 420 450 1284 455 412 447 419 451 416 453 413 446 421 449 418 452 415 455 412 447 419 451 416 453 413 446 1288 451 415 454 412 447 420 450 417 453 414 456 411 448 1286 454 413 446 421 449 1285 455 412 447 420 450 417 452 414 455 411 448 419 451 416 454 413 446 1287 453 414 455 1279 450 416 454 1281 448 418 452 416 454 413 446 1287 452 415 454 1279 450 417 453 414 455 411 448 418 452 1282 447
+#
+name: 7
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 60 01 00 00
+#
+name: 8
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 70 01 00 00
+#
+name: 9
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 80 01 00 00
+#
+name: 100
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 03
+command: 50 02 00 00
+#
+name: 0
+type: parsed
+protocol: Kaseikyo
+address: 90 02 20 00
+command: 90 01 00 00

