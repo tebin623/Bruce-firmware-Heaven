@@ -1,0 +1,90 @@
+#
+name: POWER
+type: parsed
+protocol: NECext
+address: 60 30 00 00
+command: 02 FD 00 00
+#
+name: POWER
+type: parsed
+protocol: NECext
+address: 42 BF 00 00
+command: 12 ED 00 00
+#
+name: POWER
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 00 00 00 00
+#
+name: POWER
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 1A 00 00 00
+#
+name: POWER
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 08 00 00 00
+#
+name: POWER
+type: parsed
+protocol: NECext
+address: 04 F4 00 00
+command: 08 F7 00 00
+#
+name: POWER
+type: parsed
+protocol: NEC
+address: 20 00 00 00
+command: 41 00 00 00
+# 
+name: Power
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 1A 00 00 00
+# 
+name: Power
+type: parsed
+protocol: NECext
+address: 60 30 00 00
+command: 02 FD 00 00
+# 
+name: Power
+type: parsed
+protocol: NECext
+address: 42 BF 00 00
+command: 12 ED 00 00
+#
+name: Power
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 08 00 00 00
+#
+name: Power
+type: parsed
+protocol: NECext
+address: 04 F4 00 00
+command: 08 F7 00 00
+# 
+name: On/Off
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 00 00 00 00
+#
+name: Power
+type: parsed
+protocol: NEC
+address: 20 00 00 00
+command: 41 00 00 00
+# 
+name: Power
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 0C 00 00 00

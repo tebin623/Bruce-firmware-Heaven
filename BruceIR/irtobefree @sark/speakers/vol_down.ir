@@ -1,0 +1,295 @@
+# 
+name: Vol_down
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 16 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 00 FD 00 00
+command: 07 F8 00 00
+#
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 07 00 00 00
+#
+name: Vol_dn
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1042 1461 539 457 543 1458 542 1458 542 1458 542 1458 542 454 536 461 539 457 543 1457 543 453 537 460 540 456 544 452 538 1463 537 1463 537 1456 544 50530 1065 1438 572 424 566 1434 566 1435 565 1435 565 1436 544 452 537 459 572 424 545 1456 544 451 539 458 542 454 536 460 540 1461 539 1461 539 1454 536 50538 1036 1467 543 452 537 1464 536 1464 536 1464 536 1465 545 450 540 456 544 452 537 1464 536 460 540 455 545 452 538 458 542 1459 541 1460 540 1452 538
+#
+name: Vol_dn
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1017 1484 516 1482 518 481 519 1480 510 1489 511 1487 513 1486 514 1485 515 1483 517 482 518 1480 510 490 510 489 511 489 511 488 512 488 512 486 514 50956 1015 1486 514 1484 516 484 516 1483 517 1482 518 1480 510 1489 511 1488 512 1486 514 486 514 1485 515 484 516 484 516 483 517 483 517 482 518 481 509 50960 1011 1488 512 1486 514 486 514 1485 515 1483 517 1482 518 1480 510 1488 512 1486 514 486 514 1484 516 483 517 483 517 482 518 481 519 481 508 489 511 50961 1040 1461 539 1459 541 459 541 1458 542 1456 544 1455 545 1454 546 1452 538 1460 540 460 540 1458 542 457 543 456 544 456 544 455 545 455 545 453 547
+#
+name: Vol_dn
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1014 1479 508 487 511 1482 515 480 508 488 510 484 514 481 517 478 510 485 513 1480 517 478 510 1484 513 1480 517 1478 509 1485 512 1481 516 1479 508 50925 1009 1484 513 482 516 1477 510 486 512 482 516 479 509 486 512 483 515 480 508 1486 511 484 514 1479 508 1486 511 1483 514 1480 517 1477 510 1484 513 50920 1014 1479 508 487 511 1482 515 480 508 488 510 484 514 481 517 478 510 485 513 1480 517 478 510 1484 513 1481 516 1478 509 1485 512 1482 515 1479 508 50925 1009 1483 514 481 517 1477 510 485 513 482 516 478 510 485 513 482 516 479 509 1485 512 483 515 1478 509 1486 511 1482 515 1479 508 1486 511 1483 514 50919 1015 1478 509 486 512 1482 515 480 508 487 511 483 515 481 507 487 511 484 514 1480 517 478 510 1484 513 1480 517 1477 510 1484 513 1481 516 1479 508 50925 1008 1484 513 482 516 1477 510 485 513 482 516 479 509 486 512 483 515 480 508 1485 512 484 514 1479 508 1486 511 1483 514 1480 517 1476 511 1484 513
+#
+name: Vol_dn
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1012 1503 483 514 489 1475 511 483 510 486 517 478 515 481 512 483 510 486 517 1473 513 508 485 1480 516 1475 511 1479 507 1483 513 1477 509 1480 588 50646 1012 1476 510 512 491 1473 513 508 485 485 508 488 515 480 513 482 511 512 481 1482 514 482 511 1480 516 1473 513 1478 508 1482 514 1476 510 1479 590 50651 1007 1507 489 507 485 1478 508 514 489 506 487 509 484 485 508 488 515 506 487 1503 483 513 490 1474 512 1478 508 1483 513 1477 509 1481 515 1473 513 50721 1009 1505 491 478 515 1475 511 510 483 486 517 478 515 507 486 483 510 512 491 1472 514 508 485 1505 491 1473 513 1477 509 1481 587 1403 510 1478 508 50733 1008 1506 490 479 514 1477 509 512 481 514 489 506 487 508 485 484 509 513 490 1473 513 509 483 1481 515 1474 512 1479 507 1482 514 1476 510 1478 590 50642 1006 1508 488 508 485 1478 508 487 516 479 514 481 512 510 483 486 517 504 489 1474 512 510 483 1482 514 1475 511 1479 507 1483 513 1477 509 1480 516
+# 
+name: Vol_dn
+type: parsed
+protocol: RC6
+address: D2 00 00 00
+command: 11 00 00 00
+# 
+name: Vol_Min
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 15 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 77 00 00 00
+command: FC 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 0C 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 20 00 00 00
+command: 1A 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 20 00 00 00
+command: 05 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 01 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 1E 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 09 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 08 00 00 00
+command: 0E 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 15 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 78 0E 00 00
+command: 1C E3 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 10 E7 00 00
+command: 3C C3 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 10 E7 00 00
+command: 47 B8 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 78 0E 00 00
+command: 02 FD 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 78 0E 00 00
+command: 0F F0 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 3F 5C 00 00
+command: 59 A6 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 03 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 06 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 11 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 86 FF 00 00
+command: 13 EC 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 00 00 00 00
+command: 08 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 02 BD 00 00
+command: 28 D7 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 80 00 00 00
+command: 06 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 02 00 00 00
+command: 07 00 00 00
+# 
+name: Vol_down
+type: parsed
+protocol: NEC
+address: 6E 00 00 00
+command: 00 00 00 00
+#
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 02 A0 00 00
+command: 6A 95 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 01 00 00 00
+command: 10 00 00 00
+#
+name: Vol_dn
+type: parsed
+protocol: RC5
+address: 15 00 00 00
+command: 11 00 00 00
+# 
+name: Vol_Down
+type: parsed
+protocol: Kaseikyo
+address: A0 02 20 00
+command: 10 02 00 00
+#
+name: Vol_dn
+type: parsed
+protocol: Kaseikyo
+address: A0 02 20 00
+command: 10 02 00 00
+# 
+name: Vol_down
+type: parsed
+protocol: Kaseikyo
+address: A0 02 20 00
+command: 10 02 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: RC5
+address: 10 00 00 00
+command: 11 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 00 EF 00 00
+command: 09 F6 00 00
+#
+name: Vol_dn
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3310 1876 440 1174 415 1173 405 422 440 414 437 443 408 445 406 1182 407 420 442 1173 406 1182 407 420 442 412 439 1175 414 440 411 1150 439 415 436 1152 437 416 435 419 432 447 415 440 411 442 409 418 433 420 442 438 413 440 411 1177 412 415 436 418 433 420 442 438 413 441 410 1151 438 1150 439 415 436 1178 411 1150 439 1149 440 414 437 417 434 445 406 1155 434 420 442 438 413 1175 414 413 438 442 409 444 407 39503 3303 3320 388 42857 3304 3319 379 42867 3305 3317 381
+#
+name: Vol_dn
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 9151 4434 644 1608 643 376 737 379 733 446 666 449 663 468 644 469 643 468 644 468 644 468 644 447 665 448 664 468 644 450 662 1608 643 1607 644 1576 676 1607 644 1608 643 1578 674 1608 643 1577 674 1579 672 1607 643 1608 643 1607 644 1607 644 1608 643 448 664 1608 643 448 664 468 644 469 643 380 732 468 644 469 643 1607 644 468 644 1608 643 1608 644 1609 643 1608 643 23837 9152 4434 642
+# 
+name: Vol_dn
+type: parsed
+protocol: SIRC
+address: 10 00 00 00
+command: 13 00 00 00
+#
+name: Vol_dn
+type: parsed
+protocol: SIRC15
+address: 99 00 00 00
+command: 13 00 00 00
+# 
+name: Vol_minus
+type: parsed
+protocol: NECext
+address: 85 23 00 00
+command: 47 B8 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: FD 00 00 00
+command: B9 00 00 00
+# 
+name: Vol_dn
+type: parsed
+protocol: NEC
+address: 80 00 00 00
+command: 17 00 00 00
+
+# 
+name: Vol_dn
+type: parsed
+protocol: NECext
+address: 2D D3 00 00
+command: 10 EF 00 00

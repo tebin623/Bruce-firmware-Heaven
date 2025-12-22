@@ -1,0 +1,528 @@
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 02 7D 00 00
+command: 0D F2 00 00
+#
+name: Back
+type: parsed
+protocol: NEC
+address: 01 00 00 00
+command: 19 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 00 DF 00 00
+command: 10 EF 00 00
+# 
+name: Skip_back
+type: parsed
+protocol: NEC
+address: 01 00 00 00
+command: 1E 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: A0 B7 00 00
+command: E8 17 00 00
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 206 3069 232
+# 
+name: Back
+type: parsed
+protocol: RC5
+address: 01 00 00 00
+command: 0A 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 40 40 00 00
+command: 47 B8 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 00 7F 00 00
+command: 17 E8 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 84 E0 00 00
+command: 78 87 00 00
+#
+name: Back
+type: parsed
+protocol: NEC
+address: 6E 00 00 00
+command: 3A 00 00 00
+#
+name: Back
+type: parsed
+protocol: NECext
+address: 64 46 00 00
+command: D5 2A 00 00
+#
+name: Back
+type: parsed
+protocol: NECext
+address: 84 E0 00 00
+command: E2 1D 00 00
+# 
+name: Back
+type: parsed
+protocol: NEC
+address: 80 00 00 00
+command: 44 00 00 00
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 945 747 945 747 1794 745 917 775 892 799 893 799 893 1649 1742 795 893 798 894 1643 1769 86125 892 798 894 798 1769 770 917 776 915 779 912 779 913 1653 1739 775 913 779 914 1625 1764 86143 920 771 919 772 1768 773 915 778 914 778 914 778 914 1627 1765 774 914 779 913 1625 1764
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 877 797 875 825 1774 756 847 826 847 826 847 826 846 1641 1694 835 847 826 846 1642 1718 86278 845 825 847 826 1719 811 869 805 867 807 865 831 842 1647 1689 842 841 831 842 1647 1689
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 895 782 894 782 1736 783 896 783 896 785 896 784 896 1625 1737 786 869 811 898 1624 1735 85581 895 782 895 784 1732 786 896 783 897 782 898 784 895 1626 1736 786 895 786 897 1625 1736
+# 
+name: Back
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 28 00 00 00
+#
+name: Back
+type: parsed
+protocol: NECext
+address: 00 7F 00 00
+command: 4C B3 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 48 B7 00 00
+# 
+name: Back
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 04 00 00 00
+# 
+name: Backward
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 57 A8 00 00
+# 
+name: Nav_back
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 48 B7 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 86 05 00 00
+command: 1B E4 00 00
+# 
+name: Back
+type: parsed
+protocol: RC5
+address: 03 00 00 00
+command: 0A 00 00 00
+# 
+name: Fast_back
+type: parsed
+protocol: RC5
+address: 03 00 00 00
+command: 1B 00 00 00
+#
+name: Back_to_tv_maybe
+type: parsed
+protocol: RC5
+address: 03 00 00 00
+command: 26 00 00 00
+# 
+name: Skipback
+type: parsed
+protocol: NEC
+address: 50 00 00 00
+command: 50 00 00 00
+#
+name: Back
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 40 00 00 00
+# 
+name: Flashback
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 1A 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 04 F4 00 00
+command: 28 D7 00 00
+# 
+name: Backward
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 8F 00 00 00
+# 
+name: Backwd
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 8F 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 69 69 00 00
+command: 08 F7 00 00
+#
+name: Back
+type: parsed
+protocol: NECext
+address: 85 7C 00 00
+command: 9D 62 00 00
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 823 871 823 872 1681 859 822 873 822 871 823 1720 1683 858 823 1721 1682 1708 1681
+# 
+name: Backward
+type: parsed
+protocol: NEC
+address: 01 00 00 00
+command: 53 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 66 99 00 00
+#
+name: Back
+type: parsed
+protocol: Kaseikyo
+address: 80 02 20 03
+command: 40 01 00 00
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3522 1709 467 405 466 1276 468 405 466 406 495 376 495 376 495 377 494 377 494 377 494 377 494 379 491 405 465 407 463 1281 461 410 461 411 460 411 460 411 461 411 460 411 460 411 461 411 460 411 461 1283 461 411 460 411 460 411 461 411 460 411 461 411 461 411 461 411 460 411 461 411 460 1283 461 411 460 1283 461 411 461 1283 460 1284 460 411 461 411 460 1284 459 412 435 1308 460 411 461 1283 460 411 460
+#
+name: Seekback
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3553 1705 469 404 467 1275 468 404 467 404 467 404 467 405 467 404 467 404 468 403 468 403 468 403 494 377 494 378 492 1252 490 383 487 409 462 409 462 409 462 409 463 409 463 409 462 409 463 409 462 1282 462 1282 461 410 462 410 462 1282 461 410 462 410 461 410 462 409 462 410 461 410 461 1282 462 1282 461 1282 462 410 461 1282 462 1282 461 1282 462 410 461 1282 462 410 461 1282 461 410 461 1282 461 410 461
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3520 1769 422 452 418 1335 426 449 421 459 421 452 418 456 424 450 419 460 420 453 427 446 424 451 418 461 419 454 426 1327 423 450 420 454 426 448 422 458 422 451 419 455 425 449 421 459 421 452 418 1336 425 449 420 453 427 447 423 457 423 450 420 454 426 449 421 458 422 452 417 456 424 1329 421 452 418 1335 426 449 421 1332 418 1336 425 449 421 453 427 1327 423 450 420 1334 426 447 423 1331 419 455 425
+#
+name: Back
+type: parsed
+protocol: Samsung32
+address: 3E 00 00 00
+command: 64 00 00 00
+# 
+name: Skip_backward
+type: parsed
+protocol: Kaseikyo
+address: 89 02 20 03
+command: C0 01 00 00
+#
+name: Fast_backwards
+type: parsed
+protocol: Kaseikyo
+address: 89 02 20 03
+command: 40 00 00 00
+#
+name: Skip_backwards
+type: parsed
+protocol: Kaseikyo
+address: 89 02 20 03
+command: C0 01 00 00
+# 
+name: Back_return
+type: parsed
+protocol: Kaseikyo
+address: 80 02 20 03
+command: 40 01 00 00
+# 
+name: Back
+type: parsed
+protocol: Kaseikyo
+address: 89 02 20 03
+command: 40 00 00 00
+# 
+name: Back
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 0A 00 00 00
+# 
+name: Left/back
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 5A 00 00 00
+# 
+name: PicInPic_Back
+type: parsed
+protocol: RC5
+address: 00 00 00 00
+command: 22 00 00 00
+# 
+name: Back
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 9F 00 00 00
+# 
+name: Back
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 41 00 00 00
+#
+name: Vid_back
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 2B 00 00 00
+# 
+name: Back
+type: parsed
+protocol: Samsung32
+address: 0E 00 00 00
+command: 64 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NECext
+address: 86 05 00 00
+command: 10 EF 00 00
+# 
+name: Back
+type: parsed
+protocol: NEC
+address: A0 00 00 00
+command: 10 00 00 00
+# 
+name: Fast-Backwards
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 45 00 00 00
+# 
+name: Return/back
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 58 00 00 00
+#
+name: Back
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 45 00 00 00
+#
+name: Back
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 58 00 00 00
+# 
+name: Backwards
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 45 00 00 00
+#
+name: Back
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 2D 00 00 00
+# 
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1195 1216 433 589 408 915 408 2415 434 588 410 1516 433 2090 408 1516 433 592 406 2116 433 889 435 2389 408 86946 303 952 304 400 303 677 302
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 1222 1189 432 591 434 890 438 2385 439 585 440 1483 431 2092 439 1484 441 583 432 2092 439 884 434 2390 435 86917 331 925 330 373 338 642 331
+# 
+name: Menu_back
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 58 00 00 00
+#
+name: Flashback
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 264 1848 264 792 264 792 264 792 264 792 264 1848 264 1848 264 1848 264 1848 264 792 264 1848 264 792 264 792 264 1848 264 792 264 43560 264 1848 264 792 264 792 264 792 264 792 264 792 264 792 264 792 264 792 264 1848 264 792 264 1848 264 1848 264 792 264 1848 264 43560
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 3375 1660 437 403 436 1241 437 403 436 1242 437 402 437 1242 437 402 437 1241 438 403 463 1214 465 376 463 1215 464 1215 463 401 438 1241 437 402 437 1242 436 1242 437 1243 435 1243 436 403 436 404 435 404 435 1244 435 404 435 1244 435 404 435 405 434 1245 434 405 434 405 434 405 434 405 434 405 434 1245 434 404 435 405 434 1244 435 1245 434 1245 434 1245 434 405 434 405 434 404 435 405 434 405 434 405 434 405 434
+#
+name: Flashback
+type: parsed
+protocol: NEC
+address: 28 00 00 00
+command: 13 00 00 00
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 282 1802 279 770 275 808 248 775 281 769 276 773 272 784 282 1801 280 770 275 774 282 1810 281 1802 279 1804 277 1806 275 782 274 44937 278 1806 275 774 282 775 281 769 276 773 283 1800 281 1810 281 768 277 1806 275 1808 283 774 282 768 277 772 273 776 280 1811 280 44914 280 1804 277 772 273 784 282 767 278 771 274 774 282 776 280 1803 278 772 273 776 280 1811 280 1804 277 1806 275 1808 273 784 282 44920 274 1810 281 767 278 779 277 773 272 777 279 1830 251 1815 276 772 273 1811 280 1803 278 779 277 772 273 776 280 770 275 1841 250
+#
+name: Back
+type: parsed
+protocol: NECext
+address: 72 DD 00 00
+command: 47 B8 00 00
+# 
+name: Back
+type: parsed
+protocol: SIRC15
+address: 97 00 00 00
+command: 23 00 00 00
+# 
+name: Skipback
+type: parsed
+protocol: SIRC15
+address: 97 00 00 00
+command: 3C 00 00 00
+# 
+name: Back
+type: parsed
+protocol: SIRC
+address: 01 00 00 00
+command: 3B 00 00 00
+# 
+name: Return/back
+type: parsed
+protocol: SIRC15
+address: 97 00 00 00
+command: 23 00 00 00
+# 
+name: 0Back
+type: parsed
+protocol: SIRC20
+address: 10 01 00 00
+command: 7D 00 00 00
+# 
+name: Back_Return
+type: parsed
+protocol: Samsung32
+address: 0E 00 00 00
+command: BB 00 00 00
+#
+name: Back
+type: parsed
+protocol: NEC
+address: A0 00 00 00
+command: 13 00 00 00
+# 
+name: Back
+type: parsed
+protocol: RCA
+address: 0F 00 00 00
+command: E4 00 00 00
+# 
+name: Back_tcl
+type: parsed
+protocol: NECext
+address: EA C7 00 00
+command: 66 99 00 00
+# 
+name: Skip_back
+type: parsed
+protocol: RC5
+address: 01 00 00 00
+command: 1B 00 00 00
+#
+name: Backspace
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 330 631 295 281 645 288 305 595 320 283 643 591 647 584 321 282 644 586 319 283 320 283 643 587 328
+#
+name: Back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 333 601 314 289 637 294 309 594 321 281 645 592 646 585 320 283 643 288 305 292 311 586 641 589 326
+# 
+name: Back_recall
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 13 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 4A 00 00 00
+# 
+name: Back
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 1A 00 00 00
+#
+name: back
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 987 606 586 1177 587 589 586 882 587 1176 587 588 588 589 587 882 587 1471 587 1177 586 882 587 12528 988 609 586 1176 588 588 587 883 586 1176 588 588 588 589 586 883 586 1472 586 1178 585 882 587 12527 989 609 587 1178 586 589 587 881 588 1175 589 589 586 589 586 883 586 1471 587 1176 588 882 587 12529 987 608 587 1177 587 588 587 882 587 1176 587 589 587 589 586 882 587 1471 587 1177 587 882 587 12529 987 608 587 1177 587 589 587 881 588 1177 587 589 586 588 587 883 586 1471 587 1176 587 883 586 12527 989 609 586 1176 588 588 588 882 587 1176 588 588 588 589 587 882 587 1471 587 1177 587 883 586 12528 988 609 587 1178 586 589 587 882 587 1176 588 588 588 590 585 883 586 1471 587 1176 588 882 587
+#
+name: Flashback
+type: raw
+frequency: 38000
+duty_cycle: 0.330000
+data: 591 410 618 4001 593 411 617 4000 618 5006 617 387 616 4002 616 5006 618 5006 591 415 589 4028 591 440 563 4030 589 5035 588 416 587 4056 562
