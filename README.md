@@ -10,3 +10,6 @@ This repository **collects Bruce firmware scripts** for the community, shared by
 - Scripts support: RFID, NFC, IR, Sub‑GHz  
 - Easy to use  
 
+## UPDATE
+- added IrBegone @Sark to BruceIR
+- added irtobefree @Sark to BruceIR
