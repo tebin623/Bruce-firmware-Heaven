@@ -1,0 +1,75 @@
+#
+name: power_on
+type: parsed
+protocol: NEC
+address: 04 00 00 00
+command: 08 00 00 00
+#
+name: SAMSUNG
+type: parsed
+protocol: Samsung32
+address: 07 00 00 00
+command: 02 00 00 00
+#
+name: ROKU_UNIVERSAL
+type: parsed
+protocol: NEC
+address: EA 3B 00 00
+command: 0C F3 00 00
+#
+name: SONY
+type: parsed
+protocol: SIRC
+address: 01 00 00 00
+command: 15 00 00 00
+#
+name: HISENSE
+type: parsed
+protocol: NECext
+address: 00 BF 00 00
+command: 0D F2 00 00
+#
+name: VESTEL_UNIVERSAL
+type: parsed
+protocol: RC5
+address: 00 00 00 00
+command: 0C 00 00 00
+#
+name: PHILLIPS_RC6
+type: parsed
+protocol: RC6
+address: 00 00 00 00
+command: 0C 00 00 00
+#
+name: TOSHIBA_NEC
+type: parsed
+protocol: NEC
+address: 40 00 00 00
+command: 12 00 00 00
+#
+name: PANASONIC
+type: parsed
+protocol: Panasonic
+address: 40 04 00 00
+command: BC 00 00 00
+#
+name: SHARP_LEGACY
+type: parsed
+protocol: Sharp
+address: 01 00 00 00
+command: 68 00 00 00
+#
+name: TELEFUNKEN_LEGACY
+type: parsed
+protocol: RC5
+address: 01 00 00 00
+command: 0C 00 00 00
+#
+name: MEDION
+type: parsed
+protocol: NEC
+address: 19 00 00 00
+command: 18 00 00 00
+#
+
+# made with love by sark
