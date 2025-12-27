@@ -11,5 +11,4 @@ This repository **collects Bruce firmware scripts** for the community, shared by
 - Easy to use  
 
 ## UPDATE
-- added IrBegone @Sark to BruceIR
-- added irtobefree @Sark to BruceIR
+- Add universal remotes sark to BruceIR
