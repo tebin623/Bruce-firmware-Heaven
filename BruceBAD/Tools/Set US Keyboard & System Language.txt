@@ -1,0 +1,30 @@
+REM Title: Set System Language
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to set the Windows system lanuage (exame is UK-US).
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+REM set system language to (example here is US)
+STRING Dism /online /Get-Intl
+ENTER
+DELAY 500
+STRING Set-WinSystemLocale en-US
+ENTER
+DELAY 500
+STRING Set-WinUserLanguageList en-US -force
+ENTER
+DELAY 500
+STRING exit
+ENTER
+

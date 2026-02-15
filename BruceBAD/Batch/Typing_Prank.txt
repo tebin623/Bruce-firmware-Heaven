@@ -1,0 +1,9 @@
+@echo off
+echo Watch your keyboard go wild!
+echo set WShell = CreateObject("WScript.Shell") > temp.vbs
+echo WShell.SendKeys "This is a prank! Your keyboard is alive!" >> temp.vbs
+cscript //nologo temp.vbs
+del temp.vbs
+echo Typing done! Hope you enjoyed the show.
+pause
+exit

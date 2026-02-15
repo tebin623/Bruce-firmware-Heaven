@@ -1,0 +1,9 @@
+@echo off
+echo Get ready for some annoying beeps!
+for /l %%i in (1,1,5) do (
+    echo 
+    timeout /t 1 >nul
+)
+echo Beeps done! Hope you enjoyed the music.
+pause
+exit

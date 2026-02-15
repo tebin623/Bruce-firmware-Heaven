@@ -1,0 +1,9 @@
+@echo off
+echo Spamming some fake error messages...
+for /l %%i in (1,1,3) do (
+    msg * "Critical Error %%i: System Failure Detected!"
+    timeout /t 2 >nul
+)
+echo Just a prank! Your system is fine.
+pause
+exit

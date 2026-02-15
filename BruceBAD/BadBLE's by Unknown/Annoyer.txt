@@ -1,0 +1,3 @@
+REM Annoys Android Phones
+GUI V
+REPEAT 999999

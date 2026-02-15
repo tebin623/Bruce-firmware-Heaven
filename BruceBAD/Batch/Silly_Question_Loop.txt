@@ -1,0 +1,13 @@
+@echo off
+:question
+set /p answer=Do you like to be pranked? (Y/N):
+if /i "%answer%"=="Y" (
+    echo Awesome! Here's another question!
+    goto question
+) else if /i "%answer%"=="N" (
+    echo Too bad! Here's another question!
+    goto question
+) else (
+    echo Invalid input! Try again!
+    goto question
+)

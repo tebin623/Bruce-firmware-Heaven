@@ -1,0 +1,21 @@
+REM Title: USB device sound swapper
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Swaps the USB Device connect and disconnect sounds. 
+REM Target: Windows 10,11
+
+REM you can restore default sounds by running script again.
+
+DEFAULT_DELAY 100
+
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -Ep Bypass
+ENTER
+DELAY 5000
+STRING $Connect = "C:\Windows\media\Windows Hardware Insert.wav";$Disconnect = "C:\Windows\media\Windows Hardware Remove.wav";$Path1 = "HKCU:\AppEvents\Schemes\Apps\.Default\DeviceDisconnect\.Current";$Path2 = "HKCU:\AppEvents\Schemes\Apps\.Default\DeviceConnect\.Current";$Which = Get-ItemProperty  -Path $Path1 -Name "(Default)";if ($Which.'(default)' -eq $Connect){Set-ItemProperty -Path $Path1 -Name "(Default)" -Value $Disconnect -Force;Set-ItemProperty -Path $Path2 -Name "(Default)" -Value $Connect -Force}else{Set-ItemProperty -Path $Path1 -Name "(Default)" -Value $Connect -Force;Set-ItemProperty -Path $Path2 -Name "(Default)" -Value $Disconnect -Force};exit
+DELAY 500
+ENTER
+
+
+
+

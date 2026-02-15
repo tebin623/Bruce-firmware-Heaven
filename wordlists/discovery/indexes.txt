@@ -1,0 +1,10 @@
+base
+default
+home
+index
+indice
+inicio
+localstart
+main
+menu
+start

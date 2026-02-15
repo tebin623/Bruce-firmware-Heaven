@@ -1,0 +1,10 @@
+REM Title: Webhook Test Tool
+REM Author: @beigeworm
+REM Description: This script sends a test message a webhook url from run-prompt
+REM Target: Windows 10 , 11
+
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -Ep Bypass $b = @{\"content\" = \"WORKING!\"} | ConvertTo-Json; IRM 'https://discord.com/api/webhooks/REPLACE_WITH/YOUR_WEBHOOK' -Me Post -Co 'application/json' -B $b
+ENTER

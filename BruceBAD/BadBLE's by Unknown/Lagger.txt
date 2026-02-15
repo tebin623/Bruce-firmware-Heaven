@@ -1,0 +1,3 @@
+REM Lags Windows PC's and Androids
+GUI l
+REPEAT 999999999

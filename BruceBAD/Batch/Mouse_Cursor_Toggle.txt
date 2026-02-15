@@ -1,0 +1,6 @@
+@echo off
+echo Toggling mouse cursor visibility...
+rundll32 user32.dll,SetCursorPos
+echo Cursor hidden! Just kidding, it's still there.
+pause
+exit

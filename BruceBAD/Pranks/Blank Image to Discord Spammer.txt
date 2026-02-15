@@ -1,0 +1,28 @@
+REM Title: Blank Image to Discord Spammer
+REM Author: @beigeworm
+REM Description: Uses Powershell to send a blank image to a Discord webhook multiple times (to clear chat).
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+
+REM Replace DISCORD_WEBHOOK_HERE with your Discord Webhook.
+REM Replace 25 with the number of images to send.
+
+STRING $i = 0;$url = 'DISCORD_WEBHOOK_HERE';$n = 25
+
+
+REM rest of the script.
+STRING ;$b64 = 'iVBORw0KGgoAAAANSUhEUgAAAAQAAAUeCAYAAABZhJAkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACISURBVHhe7c1LDoAgDAVAjqRoIt7/
+STRING YMjPwNaVm1k0pdPXEPYj5bUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Bld5zApxbN7eE3FJ7GfKW92W3hItGvtQezm5yzCrfdtORh+JCktiLQDAr5DyA9jL3oe8Lgu3AAAAAElFTkSuQmCC'
+STRING ;$decoded = [System.Convert]::FromBase64String($b64);$File = "$env:temp\bl.png";Set-Content -Path $File -Value $decoded -Encoding Byte;while($i -lt $n){curl.exe -F "file1=@$file" $url;$i++};Remove-Item -Path $file;exit

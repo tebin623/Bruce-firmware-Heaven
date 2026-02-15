@@ -1,0 +1,11 @@
+@echo off
+cls
+echo Windows Update in Progress...
+echo Do not turn off your computer.
+for /l %%i in (1,1,100) do (
+    echo Progress: %%i%%
+    timeout /t 1 >nul
+)
+echo Update complete! Just kidding, no updates here.
+pause
+exit

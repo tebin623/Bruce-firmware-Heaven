@@ -1,0 +1,57 @@
+# Rickroll Evil Portal
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rickroll Portal</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .portal {
+            border: 5px solid #ff0000;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #222;
+            transition: transform 0.3s;
+        }
+        .portal:hover {
+            transform: scale(1.1);
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #ff5555;
+        }
+    </style>
+</head>
+<body>
+    <div class="portal">
+        <h1>Welcome To Free Wifi!</h1>
+        <p>Click the button below to enter...</p>
+        <button class="button" onclick="rickroll()">Enter</button>
+    </div>
+
+    <script>
+        function rickroll() {
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }
+    </script>
+</body>
+</html>

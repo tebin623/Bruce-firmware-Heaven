@@ -1,0 +1,6 @@
+@echo off
+echo Shuffling desktop icons... Just kidding!
+echo This script doesn't actually move icons, but it could!
+echo Imagine your icons dancing around!
+pause
+exit

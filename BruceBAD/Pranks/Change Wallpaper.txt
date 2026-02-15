@@ -1,0 +1,28 @@
+
+REM Title: Change Wallpaper
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to retrieve an image from a specified URL and sets it as the wallpaper.
+REM Target: Windows 10,11
+
+REM **Change INSERT_IMAGE_URL_HERE to a direct link for an image.**
+
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+
+REM powershell one-liner for changing the wallpaper
+STRING $url = "INSERT_IMAGE_URL_HERE";$outputPath = "$env:temp\img.jpg";$wallpaperStyle = 2;IWR -Uri $url -OutFile $outputPath
+STRING ;$signature = 'using System;using System.Runtime.InteropServices;public class Wallpaper {[DllImport("user32.dll", CharSet = CharSet.Auto)]public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);}'
+STRING ;Add-Type -TypeDefinition $signature;$SPI_SETDESKWALLPAPER = 0x0014;$SPIF_UPDATEINIFILE = 0x01;$SPIF_SENDCHANGE = 0x02;[Wallpaper]::SystemParametersInfo($SPI_SETDESKWALLPAPER, 0, $outputPath, $SPIF_UPDATEINIFILE -bor $SPIF_SENDCHANGE)
+STRING ;sleep 1;exit
+
+DELAY 500
+ENTER

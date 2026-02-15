@@ -1,0 +1,6 @@
+@echo off
+echo Your PC will shut down in 10 seconds!
+timeout /t 5
+echo Just kidding! No shutdown for you!
+pause
+exit

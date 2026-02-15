@@ -1,0 +1,15 @@
+REM Title: Anti-AFK Tool
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Press random movement keys (Anti-AFK)
+REM Target: Windows 10
+
+REM some setup for dukie script.
+DEFAULT_DELAY 100
+DELAY 1000
+GUI r
+DELAY 500
+STRING powershell -NoP -NonI -Exec Bypass
+ENTER
+DELAY 4000
+STRING Add-Type -AssemblyName System.Windows.Forms;while ($true) {$key = @('w','a','s','d');$randomKey = (Get-Random -InputObject $key -Count 1);[System.Windows.Forms.SendKeys]::SendWait($randomKey);[System.Windows.Forms.SendKeys]::SendWait($randomKey);sleep 1}
+ENTER

